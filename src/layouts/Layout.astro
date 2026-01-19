@@ -26,6 +26,16 @@ const { title, description = "Diogo Soares - Senior Product Manager | Building i
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GJPVRQBNL2"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GJPVRQBNL2');
+    </script>
+
 		<!-- JSON-LD for Person -->
 		<script type="application/ld+json">
 			{
