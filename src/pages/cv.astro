@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import cvData from '../data/cv.json';
+
+const { profile, skills, toolkit, history, education, certifications } = cvData;
+---
+
+<Layout title={`CV | ${profile.name}`}>
+  <article class="section-container py-16 print:py-0 print:max-w-none">
+    
+    {/* Header with Contact */}
+    <header class="mb-12 pb-8 border-b border-border print:mb-6 print:pb-4">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-text mb-2 print:text-3xl">{profile.name}</h1>
+          <h2 class="text-xl font-semibold text-accent mb-4 print:text-lg">{profile.role}</h2>
+        </div>
+        
+        {/* Contact Card */}
+        <div class="bg-surface-alt p-4 rounded-lg border border-border print:bg-transparent print:border-0 print:p-0">
+          <div class="flex flex-col gap-2 text-sm">
+            <a href={`mailto:${profile.email}`} class="flex items-center gap-2 hover:text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              {profile.email}
+            </a>
+            <a href={`tel:${profile.phone.replace(/\s/g, '')}`} class="flex items-center gap-2 hover:text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              {profile.phone}
+            </a>
+            <a href={`https://${profile.linkedin}`} target="_blank" class="flex items-center gap-2 hover:text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              {profile.linkedin}
+            </a>
+            <span class="flex items-center gap-2 text-text-muted">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              {profile.location}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-text-muted leading-relaxed max-w-3xl print:text-sm print:mt-4">
+        {profile.summary}
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 print:gap-8">
+      
+      {/* Main Column: Work History */}
+      <div class="lg:col-span-2 space-y-8">
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-6 flex items-center gap-2">
+            <span class="w-6 h-0.5 bg-accent"></span>
+            Professional Experience
+          </h3>
+          
+          <div class="space-y-8 print:space-y-6">
+            {history.map((job) => (
+              <div class="relative pl-6 border-l-2 border-border hover:border-accent transition-colors">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-1">
+                  <h4 class="text-lg font-bold text-text print:text-base">{job.company}</h4>
+                  <span class="text-xs font-mono text-text-muted bg-surface-alt px-2 py-1 rounded print:bg-transparent print:p-0">
+                    {job.period}
+                  </span>
+                </div>
+                
+                <div class="text-sm font-semibold text-accent mb-3 print:text-xs print:mb-1">{job.role}</div>
+                
+                <ul class="space-y-2 text-sm text-text-muted leading-relaxed print:text-xs">
+                  {job.description.map((desc) => (
+                    <li class="flex items-start gap-2">
+                      <span class="text-accent mt-1">•</span>
+                      <span>{desc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* Sidebar */}
+      <aside class="space-y-8 print:text-xs">
+        
+        {/* Skills */}
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
+            <span class="w-6 h-0.5 bg-accent"></span>
+            Skills
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {skills.map(skill => (
+              <span class="badge print:border print:border-border print:bg-white text-xs">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* Toolkit */}
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
+            <span class="w-6 h-0.5 bg-accent"></span>
+            Tools
+          </h3>
+          <p class="text-sm text-text-muted leading-relaxed">
+            {toolkit.join(" • ")}
+          </p>
+        </section>
+
+        {/* Education */}
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
+            <span class="w-6 h-0.5 bg-accent"></span>
+            Education
+          </h3>
+          {education.map(edu => (
+            <div class="mb-4">
+              <div class="font-bold text-text text-sm">{edu.institution}</div>
+              <div class="text-sm text-text-muted mt-1">{edu.degree}</div>
+              <div class="text-xs font-mono text-text-muted mt-1">{edu.year}</div>
+            </div>
+          ))}
+        </section>
+
+        {/* Certifications - Prominent */}
+        <section class="bg-accent-subtle p-4 rounded-lg print:bg-transparent print:p-0 print:border print:border-border">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
+            <span class="w-6 h-0.5 bg-accent"></span>
+            Certifications
+          </h3>
+          <ul class="space-y-3">
+            {certifications.map(cert => (
+              <li class="flex flex-col">
+                <span class="text-sm font-medium text-text">{cert.name}</span>
+                <span class="text-xs text-text-muted">{cert.issuer}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+      </aside>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-border text-center print:hidden">
+      <button onclick="window.print()" class="btn-primary cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        Download PDF / Print
+      </button>
+    </div>
+
+  </article>
+</Layout>
+
+<style>
+  @media print {
+    :global(header), :global(footer) {
+      display: none !important;
+    }
+    :global(body) {
+      background: white !important;
+      padding: 0 !important;
+    }
+    :global(main) {
+      padding-top: 0 !important;
+    }
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+// In a real scenario we would fetch content collections here
+// import { getCollection } from 'astro:content';
+// const allProjects = await getCollection('work');
+
+// Using the same placeholder data for consistency until MD files are populated
+const projects = [
+  {
+    title: "Conversational AI Scale",
+    description: "Orchestrating complex chatbot integrations for enterprise clients.",
+    role: "Product Lead",
+    tags: ["AI", "Conversational", "SaaS"],
+    href: "/projects/conversational-ai"
+  },
+  {
+    title: "Digital Transformation NGO",
+    description: "Strategic digital overhaul for a major NGO.",
+    role: "Project Manager",
+    tags: ["Strategy", "NGO", "Public Sector"],
+    href: "/projects/ngo-digital"
+  },
+  {
+    title: "Marketing Automation CRM",
+    description: "Integrating sales and operations through a custom marketing automation lifecycle.",
+    role: "Product Manager",
+    tags: ["B2B", "CRM", "Automation"],
+    href: "/projects/marketing-crm"
+  },
+  {
+    title: "Sustainable Coastline Initiative",
+    description: "Management of the 'Litoral Sustentável' project, coordinating public stakeholders.",
+    role: "Project Manager",
+    tags: ["Sustainability", "Public Policy"],
+    href: "/projects/litoral-sustentavel"
+  }
+];
+---
+
+<Layout title="Work Archive | Diogo Soares">
+  <div class="max-w-4xl mx-auto py-12">
+    <header class="mb-16">
+      <h1 class="text-4xl font-serif font-bold text-primary mb-4">Project Archive</h1>
+      <p class="text-secondary font-mono text-sm max-w-xl">
+        A selected collection of product management and strategy work, spanning NGO articulation to Enterprise AI solutions.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </div>
+</Layout>

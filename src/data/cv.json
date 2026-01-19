@@ -1,0 +1,168 @@
+{
+    "profile": {
+        "name": "Diogo Soares",
+        "role": "Senior Product Manager",
+        "location": "Belo Horizonte, Brazil",
+        "phone": "+55 31 97234-6884",
+        "email": "diogosp@gmail.com",
+        "linkedin": "linkedin.com/in/diogo-soares-pm/",
+        "summary": "Senior Product Manager and Business Analyst and anthropologist blending a deep understanding of human behavior with expertise in delivering impactful technology solutions across diverse sectors, including NGO, technology, healthcare, and marketing. Proven track record of leading cross-functional teams, leveraging data-driven decision-making, and fostering collaborative environments to achieve strategic objectives and drive sustainable growth. Passionate about applying technology for social good and creating a more equitable and sustainable future."
+    },
+    "skills": [
+        "Product Management",
+        "Agile Development",
+        "Product Strategy",
+        "Product Vision",
+        "Data Analytics",
+        "User Experience (UX)",
+        "Customer Journey",
+        "Roadmapping",
+        "B2B Marketing",
+        "Feature Prioritization",
+        "A/B Testing",
+        "Growth Hacking",
+        "Customer Retention",
+        "Team Leadership",
+        "Strategic Partnerships",
+        "Payment Systems",
+        "KYC/SSO/MFA"
+    ],
+    "toolkit": [
+        "Jira",
+        "Asana",
+        "Azure",
+        "Google Analytics",
+        "HubSpot",
+        "Salesforce",
+        "Figma",
+        "Zapier",
+        "Miro",
+        "Hotjar",
+        "WordPress",
+        "Chatbots/AI"
+    ],
+    "history": [
+        {
+            "company": "Zenvia",
+            "role": "Senior Product Manager",
+            "period": "Ago 2025 – Presente",
+            "description": [
+                "Spearheaded the Product Management for a SaaS platform module focused on human-to-human customer service connected with WhatsApp and other communication channels.",
+                "Defined and owned the product roadmap, prioritizing features to drive business value and enhance the user experience.",
+                "Monitored key performance metrics (KPIs) related to the module, using data to inform product strategy and decisions.",
+                "Managed the integration of the platform with CRM, e-commerce, and ERP systems to ensure seamless customer journey and data flow.",
+                "Directed the creation and optimization of digital customer touchpoints, including websites, apps, and AI-powered chatbot flows."
+            ]
+        },
+        {
+            "company": "8D Hubify",
+            "role": "Senior Product Manager",
+            "period": "Ago 2024 – Ago 2025",
+            "description": [
+                "Led automated marketing campaigns on email and WhatsApp to boost customer engagement.",
+                "Managed integrations with CRM, WhatsApp, e-commerce, and ERP systems.",
+                "Directed all the creation of websites, apps and AI-powered chatbot flows to improve customer conversations.",
+                "Built strong client relationships by turning their needs into clear system requirements."
+            ]
+        },
+        {
+            "company": "Rethink",
+            "role": "Senior Product Manager",
+            "period": "Nov 2023 – Mai 2024",
+            "description": [
+                "Led the analysis, development, and implementation of a new budgeting system, streamlining the proposal process and increasing efficiency by 30%.",
+                "Collaborated with cross-functional teams to analyze, design, and implement technology solutions aligned with organizational needs.",
+                "Successfully developed and delivered a comprehensive training program for colleagues, enhancing team skills and knowledge transfer.",
+                "Conducted workshops and training sessions on emerging technologies, such as Artificial Intelligence, for over 30 colleagues."
+            ]
+        },
+        {
+            "company": "Blip",
+            "role": "Senior Product Manager",
+            "period": "Abr 2021 – Ago 2023",
+            "description": [
+                "Led the development and implementation of Take Blip's SaaS Chatbot Platform, collaborating closely with 8-10 cross-functional teams.",
+                "Successfully scaled the platform to handle millions of daily interactions, establishing Take Blip as a leading chatbot provider in Brazil.",
+                "Achieved a 25% increase in NPS for Dr. Consulta and a 30% improvement in CSAT for Itaú within the first year.",
+                "Integrated various authentication methods, including SMS, facial recognition, and voice recognition, ensuring secure access and data protection.",
+                "Achieved a 15% reduction in operational costs for XP Inc. while expanding market share through targeted feature enhancements."
+            ]
+        },
+        {
+            "company": "Gauge",
+            "role": "Senior Project Manager",
+            "period": "Mar 2020 – Abr 2021",
+            "description": [
+                "Led the design and development of over 12 prototypes for new technology solutions, employing a user-centric approach.",
+                "Successfully implemented and monitored new business processes, including a streamlined proposal tracking system.",
+                "Demonstrated strong stakeholder management skills with clients including Vivo and Suvinil.",
+                "Consistently delivered high-quality projects on time and within budget, exceeding client expectations in 90% of projects."
+            ]
+        },
+        {
+            "company": "Weber Shandwick (McCann WorldGroup)",
+            "role": "Senior Marketing Project Manager",
+            "period": "Jul 2017 – Mar 2020",
+            "description": [
+                "Successfully managed the end-to-end execution of over 50 projects, encompassing digital transformation initiatives and content creation.",
+                "Led the digital transformation of Hospital Beneficência Portuguesa, resulting in a 50% increase in user engagement.",
+                "Implemented an advanced project management platform, integrating SAP for over 200 users, reducing project delivery times by 25%.",
+                "Collaborated on projects across multiple time zones, achieving a 20% increase in operational efficiency through global integration."
+            ]
+        },
+        {
+            "company": "Brasa",
+            "role": "Project Manager",
+            "period": "Jan 2016 – Jul 2017",
+            "description": [
+                "Led all digital projects at the agency as Digital Project Manager, specializing in website and e-commerce development.",
+                "Implemented agile methodologies, introducing sprints that accelerated delivery timelines.",
+                "Managed contract, budget, and financial expenses, maintaining project profitability with a consistent track record."
+            ]
+        },
+        {
+            "company": "Instituto Pólis (NGO)",
+            "role": "Project Manager",
+            "period": "Abr 2012 – Jan 2016",
+            "description": [
+                "Successfully managed a diverse portfolio of over 100 digital events, spanning across 14 municipalities. Project: Litoral Sustentável.",
+                "Led and mentored a high-performing team, overseeing all project phases from strategic planning to performance monitoring.",
+                "Demonstrated expertise in managing digital communication channels, including websites and social media platforms.",
+                "Produced high-quality content, including over 50 video articles, newsletters, and social media posts."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor of Social Science (Anthropology, Sociology and Political Science)",
+            "institution": "USP (Universidade de São Paulo)",
+            "year": "2007-2012"
+        }
+    ],
+    "certifications": [
+        {
+            "name": "English Level C2 Proficient",
+            "issuer": "EF SET"
+        },
+        {
+            "name": "Artificial Intelligence in Digital Business",
+            "issuer": "Tera Academy"
+        },
+        {
+            "name": "Digital Product Leadership",
+            "issuer": "Tera Academy"
+        },
+        {
+            "name": "Google Analytics Individual Qualification",
+            "issuer": "Google"
+        },
+        {
+            "name": "Leadership and Business Strategy",
+            "issuer": "Tera Academy"
+        },
+        {
+            "name": "Agile Project Manager",
+            "issuer": "Project Management Institute (PMI)"
+        }
+    ]
+}

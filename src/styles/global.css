@@ -1,0 +1,53 @@
+/* Font setup: Inter & JetBrains Mono - Modern, clean */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-text font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold text-text tracking-tight;
+  }
+
+  code,
+  pre,
+  .mono {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-5xl mx-auto px-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent-hover transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-text text-text px-6 py-3 rounded-lg font-medium hover:bg-text hover:text-white transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white border border-border rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-block text-xs font-medium bg-accent-subtle text-accent px-3 py-1 rounded-full;
+  }
+}
