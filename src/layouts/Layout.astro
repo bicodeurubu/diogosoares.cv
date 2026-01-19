@@ -51,17 +51,7 @@ const { title, description = "Diogo Soares - Senior Product Manager | Building i
              <!-- Main Branch: Coming Soon State -->
             <span class="text-xs text-accent">Coming Soon</span>
 					</div>
-					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-primary text-sm py-2 px-4 text-white !text-white hover:!text-white" showIcon={false}>
-            <!-- Using simple text inside since passing complex slot might be tricky if not defined, 
-                 but keeping the SVG structure as child content which gets ignored if not slotted? 
-                 Actually EncodedContact definition doesn't use slots. 
-                 It uses iconSvg prop logic. passing children to it does nothing unless <slot /> is in component.
-                 I'll remove the svg child to be clean and just rely on the label. 
-                 Wait, Step 305 encoded contact has showIcon prop. 
-                 If I want a custom icon I should have added a slot. 
-                 But the current implementation uses internal icons. 
-                 I'll stick to simple usage. -->
-          </EncodedContact>
+					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-primary text-sm py-2 px-4 text-white !text-white hover:!text-white" showIcon={false} />
 				</div>
 			</nav>
 		</header>

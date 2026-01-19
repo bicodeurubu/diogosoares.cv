@@ -5,7 +5,23 @@ import EncodedContact from '../components/EncodedContact.astro';
 
 <Layout title="Diogo Soares | Coming Soon">
   <section class="min-h-[80vh] flex flex-col justify-center items-center text-center section-container">
-// ...
+    
+    <div class="mb-8">
+       <!-- Simple animated loader or just an icon -->
+       <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+       </span>
+       
+       <h1 class="text-4xl md:text-6xl font-extrabold text-text mb-4 tracking-tight">
+        Work in <span class="text-accent">Progress</span>
+       </h1>
+       
+       <p class="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed">
+        We are crafting a new digital experience to showcase strategic product leadership. 
+        <br class="hidden md:block" />The full portfolio will be live soon.
+       </p>
+    </div>
+
     <!-- Contact Cards - Reuse of the design style -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-lg mx-auto">
       <EncodedContact 
