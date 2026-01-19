@@ -51,7 +51,7 @@ const { profile, skills, toolkit, history, education, certifications } = cvData;
         <section>
           <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-6 flex items-center gap-2">
             <span class="w-6 h-0.5 bg-accent"></span>
-            Professional Experience
+            <span data-i18n="cv.experience">Professional Experience</span>
           </h3>
           
           <div class="space-y-8 print:space-y-6">
@@ -87,7 +87,7 @@ const { profile, skills, toolkit, history, education, certifications } = cvData;
         <section>
           <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
             <span class="w-6 h-0.5 bg-accent"></span>
-            Skills
+            <span data-i18n="cv.skills">Skills</span>
           </h3>
           <div class="flex flex-wrap gap-2">
             {skills.map(skill => (
@@ -102,7 +102,7 @@ const { profile, skills, toolkit, history, education, certifications } = cvData;
         <section>
           <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
             <span class="w-6 h-0.5 bg-accent"></span>
-            Tools
+            <span data-i18n="cv.tools">Tools</span>
           </h3>
           <p class="text-sm text-text-muted leading-relaxed">
             {toolkit.join(" • ")}
@@ -113,7 +113,7 @@ const { profile, skills, toolkit, history, education, certifications } = cvData;
         <section>
           <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
             <span class="w-6 h-0.5 bg-accent"></span>
-            Education
+            <span data-i18n="cv.education">Education</span>
           </h3>
           {education.map(edu => (
             <div class="mb-4">
@@ -128,7 +128,7 @@ const { profile, skills, toolkit, history, education, certifications } = cvData;
         <section class="bg-accent-subtle p-4 rounded-lg print:bg-transparent print:p-0 print:border print:border-border">
           <h3 class="text-sm font-bold uppercase tracking-wider text-accent mb-4 flex items-center gap-2">
             <span class="w-6 h-0.5 bg-accent"></span>
-            Certifications
+            <span data-i18n="cv.certifications">Certifications</span>
           </h3>
           <ul class="space-y-3">
             {certifications.map(cert => (
@@ -146,7 +146,7 @@ const { profile, skills, toolkit, history, education, certifications } = cvData;
     <div class="mt-16 pt-8 border-t border-border text-center print:hidden">
       <button onclick="window.print()" class="btn-primary cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
-        Download PDF / Print
+        <span data-i18n="cv.download">Download PDF / Print</span>
       </button>
     </div>
 

@@ -13,12 +13,13 @@ import EncodedContact from '../components/EncodedContact.astro';
        </span>
        
        <h1 class="text-4xl md:text-6xl font-extrabold text-text mb-4 tracking-tight">
-        Work in <span class="text-accent">Progress</span>
+        <span data-i18n="home.title">Work in Progress</span>
        </h1>
        
        <p class="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed">
-        We are crafting a new digital experience to showcase strategic product leadership. 
-        <br class="hidden md:block" />The full portfolio will be live soon.
+        <span data-i18n="home.description">We are crafting a new digital experience to showcase strategic product leadership.</span>
+        <br class="hidden md:block" />
+        <span data-i18n="home.subtitle">The full portfolio will be live soon.</span>
        </p>
     </div>
 
@@ -46,13 +47,13 @@ import EncodedContact from '../components/EncodedContact.astro';
         <span class="p-2 bg-surface-alt rounded-lg group-hover:bg-accent group-hover:text-white transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
         </span>
-        <span class="font-medium">LinkedIn Profile</span>
+        <span class="font-medium" data-i18n="home.linkedinLabel">LinkedIn Profile</span>
       </EncodedContact>
     </div>
 
     <div class="mt-12">
        <span class="text-sm font-mono text-text-muted flex items-center justify-center gap-2">
-         Belo Horizonte, Brazil • 
+         <span data-i18n="home.location">Belo Horizonte, Brazil</span> • 
          <EncodedContact type="phone" value="+55 31 97234-6884" class="hover:text-accent" />
        </span>
     </div>
