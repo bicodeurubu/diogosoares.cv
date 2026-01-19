@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import EncodedContact from '../components/EncodedContact.astro';
+import LanguageSelector from '../components/LanguageSelector.astro';
+import { defaultLang, useTranslations, type Lang } from '../i18n';
 
 interface Props {
 	title: string;
@@ -8,6 +10,10 @@ interface Props {
 }
 
 const { title, description = "Diogo Soares - Senior Product Manager | Building impactful technology solutions" } = Astro.props;
+
+// Default to 'en' for SSR, client-side will detect and update
+const lang: Lang = defaultLang;
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
@@ -26,6 +32,16 @@ const { title, description = "Diogo Soares - Senior Product Manager | Building i
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GJPVRQBNL2"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GJPVRQBNL2');
+    </script>
+
 		<!-- JSON-LD for Person -->
 		<script type="application/ld+json">
 			{
@@ -41,18 +57,40 @@ const { title, description = "Diogo Soares - Senior Product Manager | Building i
 				]
 			}
 		</script>
+		
+		<!-- i18n initialization script -->
+		<script>
+			import { initLang, getPreferredLang, useTranslations } from '../i18n';
+			
+			document.addEventListener('DOMContentLoaded', () => {
+				const lang = initLang();
+				const t = useTranslations(lang);
+				
+				// Update translatable elements
+				document.querySelectorAll('[data-i18n]').forEach((el) => {
+					const key = el.getAttribute('data-i18n');
+					if (key) {
+						const translated = t(key as any);
+						if (translated) {
+							el.textContent = translated;
+						}
+					}
+				});
+			});
+		</script>
 	</head>
 	<body class="flex flex-col min-h-screen">
 		<header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-border">
 			<nav class="section-container h-16 flex items-center justify-center md:justify-between">
 				<a href="/" class="text-xl font-bold tracking-tight">Diogo<span class="text-accent">.</span></a>
-				<div class="flex items-center gap-8">
-          <!-- Staging Branch: Full Navigation -->
+				<div class="flex items-center gap-4 md:gap-8">
+					<!-- Staging Branch: Full Navigation -->
 					<div class="hidden md:flex gap-6 text-sm font-medium text-text-muted">
-						<a href="/#projects" class="hover:text-text transition-colors">Projects</a>
-						<a href="/cv" class="hover:text-text transition-colors">CV</a>
+						<a href="/#projects" class="hover:text-accent transition-colors" data-i18n="nav.projects">Projects</a>
+						<a href="/cv" class="hover:text-accent transition-colors">CV</a>
 					</div>
-					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-primary text-sm py-2 px-4 text-white !text-white hover:!text-white" showIcon={false} />
+					<LanguageSelector />
+					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-primary text-sm py-2 px-4 text-white !text-white hover:!text-white" showIcon={false} data-i18n-label="nav.letsTalk" />
 				</div>
 			</nav>
 		</header>
@@ -66,7 +104,7 @@ const { title, description = "Diogo Soares - Senior Product Manager | Building i
 				<div class="flex flex-col md:flex-row justify-between items-center gap-6">
 					<div>
 						<p class="text-xl font-bold">Diogo Soares</p>
-						<p class="text-text-inverted/60 text-sm mt-1">Senior Product Manager</p>
+						<p class="text-text-inverted/60 text-sm mt-1" data-i18n="footer.role">Senior Product Manager</p>
 					</div>
 					<div class="flex flex-col md:flex-row items-center gap-4 text-sm">
             <EncodedContact type="email" value="diogosp@gmail.com" class="hover:!text-accent transition-colors" />
@@ -77,7 +115,7 @@ const { title, description = "Diogo Soares - Senior Product Manager | Building i
 					</div>
 				</div>
 				<div class="border-t border-text-inverted/10 mt-8 pt-8 text-center text-xs text-text-inverted/40">
-					<p>© {new Date().getFullYear()} Diogo Soares. Built with purpose.</p>
+					<p>© {new Date().getFullYear()} Diogo Soares. <span data-i18n="footer.builtWith">Built with purpose.</span></p>
 				</div>
 			</div>
 		</footer>

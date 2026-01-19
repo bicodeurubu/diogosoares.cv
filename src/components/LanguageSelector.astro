@@ -1,0 +1,102 @@
+---
+/**
+ * Language Selector Component
+ * A simple dropdown to switch between English and Portuguese
+ */
+import { languages, defaultLang, type Lang } from '../i18n';
+---
+
+<div class="language-selector relative">
+  <button 
+    id="lang-toggle" 
+    class="flex items-center gap-1.5 text-sm font-medium text-text-muted hover:text-accent transition-colors px-2 py-1 rounded-md hover:bg-surface-alt"
+    aria-label="Change language"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20"/>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span id="current-lang-label">EN</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+  
+  <div id="lang-dropdown" class="hidden absolute right-0 top-full mt-1 bg-white border border-border rounded-lg shadow-lg py-1 min-w-[120px] z-50">
+    <button 
+      data-lang="en"
+      class="lang-option w-full text-left px-3 py-2 text-sm hover:bg-surface-alt transition-colors flex items-center gap-2"
+    >
+      <span class="text-xs">🇺🇸</span>
+      English
+    </button>
+    <button 
+      data-lang="pt-br"
+      class="lang-option w-full text-left px-3 py-2 text-sm hover:bg-surface-alt transition-colors flex items-center gap-2"
+    >
+      <span class="text-xs">🇧🇷</span>
+      Português
+    </button>
+  </div>
+</div>
+
+<script>
+  import { getPreferredLang, setPreferredLang, type Lang } from '../i18n';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('lang-toggle');
+    const dropdown = document.getElementById('lang-dropdown');
+    const currentLabel = document.getElementById('current-lang-label');
+    const langOptions = document.querySelectorAll('.lang-option');
+    
+    // Set initial language display
+    const currentLang = getPreferredLang();
+    updateLabel(currentLang);
+    highlightCurrentLang(currentLang);
+    
+    // Toggle dropdown
+    toggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown?.classList.toggle('hidden');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+      dropdown?.classList.add('hidden');
+    });
+    
+    // Language selection
+    langOptions.forEach((option) => {
+      option.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLElement;
+        const lang = target.dataset.lang as Lang;
+        
+        if (lang && lang !== currentLang) {
+          setPreferredLang(lang);
+          // Reload to apply new language
+          window.location.reload();
+        }
+        
+        dropdown?.classList.add('hidden');
+      });
+    });
+    
+    function updateLabel(lang: Lang) {
+      if (currentLabel) {
+        currentLabel.textContent = lang === 'pt-br' ? 'PT' : 'EN';
+      }
+    }
+    
+    function highlightCurrentLang(lang: Lang) {
+      langOptions.forEach((option) => {
+        const optionEl = option as HTMLElement;
+        if (optionEl.dataset.lang === lang) {
+          optionEl.classList.add('text-accent', 'font-medium');
+        } else {
+          optionEl.classList.remove('text-accent', 'font-medium');
+        }
+      });
+    }
+  });
+</script>
