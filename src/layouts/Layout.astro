@@ -62,7 +62,7 @@ const t = useTranslations(lang);
 		<script>
 			import { initLang, getPreferredLang, useTranslations } from '../i18n';
 			
-			document.addEventListener('DOMContentLoaded', () => {
+			const setupI18n = () => {
 				const lang = initLang();
 				const t = useTranslations(lang);
 				
@@ -76,7 +76,13 @@ const t = useTranslations(lang);
 						}
 					}
 				});
-			});
+			};
+
+			// Run immediately since script is a module
+			setupI18n();
+
+			// Also run on view transitions if enabled
+			document.addEventListener('astro:page-load', setupI18n);
 		</script>
 	</head>
 	<body class="flex flex-col min-h-screen">
