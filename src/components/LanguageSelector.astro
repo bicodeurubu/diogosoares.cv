@@ -44,26 +44,46 @@ import { languages, defaultLang, type Lang } from '../i18n';
 <script>
   import { getPreferredLang, setPreferredLang, type Lang } from '../i18n';
   
-  document.addEventListener('DOMContentLoaded', () => {
+  const initLanguageSelector = () => {
     const toggle = document.getElementById('lang-toggle');
     const dropdown = document.getElementById('lang-dropdown');
     const currentLabel = document.getElementById('current-lang-label');
     const langOptions = document.querySelectorAll('.lang-option');
     
+    if (!toggle || !dropdown) return;
+
     // Set initial language display
     const currentLang = getPreferredLang();
+    
+    const updateLabel = (lang: Lang) => {
+      if (currentLabel) {
+        currentLabel.textContent = lang === 'pt-br' ? 'PT' : 'EN';
+      }
+    };
+
+    const highlightCurrentLang = (lang: Lang) => {
+      langOptions.forEach((option) => {
+        const optionEl = option as HTMLElement;
+        if (optionEl.dataset.lang === lang) {
+          optionEl.classList.add('text-accent', 'font-medium');
+        } else {
+          optionEl.classList.remove('text-accent', 'font-medium');
+        }
+      });
+    };
+
     updateLabel(currentLang);
     highlightCurrentLang(currentLang);
     
     // Toggle dropdown
-    toggle?.addEventListener('click', (e) => {
+    toggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      dropdown?.classList.toggle('hidden');
+      dropdown.classList.toggle('hidden');
     });
     
     // Close dropdown when clicking outside
     document.addEventListener('click', () => {
-      dropdown?.classList.add('hidden');
+      dropdown.classList.add('hidden');
     });
     
     // Language selection
@@ -78,25 +98,14 @@ import { languages, defaultLang, type Lang } from '../i18n';
           window.location.reload();
         }
         
-        dropdown?.classList.add('hidden');
+        dropdown.classList.add('hidden');
       });
     });
-    
-    function updateLabel(lang: Lang) {
-      if (currentLabel) {
-        currentLabel.textContent = lang === 'pt-br' ? 'PT' : 'EN';
-      }
-    }
-    
-    function highlightCurrentLang(lang: Lang) {
-      langOptions.forEach((option) => {
-        const optionEl = option as HTMLElement;
-        if (optionEl.dataset.lang === lang) {
-          optionEl.classList.add('text-accent', 'font-medium');
-        } else {
-          optionEl.classList.remove('text-accent', 'font-medium');
-        }
-      });
-    }
-  });
+  };
+
+  // Run immediately since script is a module
+  initLanguageSelector();
+  
+  // Also run on view transitions if enabled in the future
+  document.addEventListener('astro:page-load', initLanguageSelector);
 </script>
