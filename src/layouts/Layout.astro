@@ -1,21 +1,58 @@
 ---
+import '../styles/global.css';
 import EncodedContact from '../components/EncodedContact.astro';
 
 interface Props {
-// ...
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Diogo Soares - Senior Product Manager | Building impactful technology solutions" } = Astro.props;
 ---
-// ...
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+
+		<!-- JSON-LD for Person -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Diogo Soares",
+				"jobTitle": "Senior Product Manager",
+				"url": "https://diogosoares.com",
+				"telephone": "+55 31 97234-6884",
+				"email": "diogosp@gmail.com",
+				"sameAs": [
+					"https://linkedin.com/in/diogo-soares-pm/"
+				]
+			}
+		</script>
+	</head>
+	<body class="flex flex-col min-h-screen">
 		<header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-border">
 			<nav class="section-container h-16 flex items-center justify-center md:justify-between">
 				<a href="/" class="text-xl font-bold tracking-tight">Diogo<span class="text-accent">.</span></a>
 				<div class="flex items-center gap-8">
+          <!-- Staging Branch: Full Navigation -->
 					<div class="hidden md:flex gap-6 text-sm font-medium text-text-muted">
 						<a href="/#projects" class="hover:text-text transition-colors">Projects</a>
 						<a href="/cv" class="hover:text-text transition-colors">CV</a>
 					</div>
-					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-primary text-sm py-2 px-4 text-white !text-white hover:!text-white" showIcon={false}>
-            <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-          </EncodedContact>
+					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-primary text-sm py-2 px-4 text-white !text-white hover:!text-white" showIcon={false} />
 				</div>
 			</nav>
 		</header>
@@ -39,7 +76,6 @@ interface Props {
             <EncodedContact type="linkedin" value="linkedin.com/in/diogo-soares-pm/" label="LinkedIn" class="hover:!text-accent transition-colors" />
 					</div>
 				</div>
-// ...
 				<div class="border-t border-text-inverted/10 mt-8 pt-8 text-center text-xs text-text-inverted/40">
 					<p>© {new Date().getFullYear()} Diogo Soares. Built with purpose.</p>
 				</div>
