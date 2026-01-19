@@ -1,46 +1,103 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+// Strategic projects with metrics
+const projects = [
+  {
+    title: "Conversational AI Platform (Blip)",
+    description: "Led the development of Take Blip's SaaS Chatbot Platform handling millions of daily interactions for enterprise clients in finance and healthcare.",
+    role: "Senior Product Manager",
+    tags: ["AI/ML", "SaaS", "Enterprise"],
+    href: "/projects/conversational-ai",
+    metrics: "+25% NPS for Dr. Consulta • +30% CSAT for Itaú"
+  },
+  {
+    title: "WhatsApp Customer Service (Zenvia)",
+    description: "Spearheading product management for human-to-human customer service module integrated with CRM, e-commerce, and ERP systems.",
+    role: "Senior Product Manager",
+    tags: ["WhatsApp", "CX", "Integration"],
+    href: "/projects/zenvia-cx",
+    metrics: "Multi-channel orchestration"
+  },
+  {
+    title: "Marketing Automation (8D Hubify)",
+    description: "Led automated marketing campaigns on email and WhatsApp, directing AI-powered chatbot flows and CRM integrations.",
+    role: "Senior Product Manager",
+    tags: ["Automation", "B2B", "CRM"],
+    href: "/projects/marketing-crm",
+    metrics: "End-to-end automation"
+  },
+  {
+    title: "Digital Transformation (Hospital BP)",
+    description: "Led the digital transformation of Hospital Beneficência Portuguesa, revamping website, intranet, and multimedia content.",
+    role: "Marketing PM",
+    tags: ["Healthcare", "Digital", "UX"],
+    href: "/projects/hospital-bp",
+    metrics: "+50% user engagement"
+  }
+];
+
+const skills = [
+  "Product Strategy", "Agile Development", "Data Analytics", "UX/Customer Journey", 
+  "Roadmapping", "B2B Marketing", "Payment Systems", "KYC/SSO/MFA"
+];
 ---
 
-<Layout title="Diogo Soares | Coming Soon">
-  <section class="min-h-[80vh] flex flex-col justify-center items-center text-center section-container">
-    
-    <div class="mb-8">
-       <!-- Simple animated loader or just an icon -->
-       <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-       </span>
-       
-       <h1 class="text-4xl md:text-6xl font-extrabold text-text mb-4 tracking-tight">
-        Work in <span class="text-accent">Progress</span>
-       </h1>
-       
-       <p class="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed">
-        We are crafting a new digital experience to showcase strategic product leadership. 
-        <br class="hidden md:block" />The full portfolio will be live soon.
-       </p>
-    </div>
+<Layout title="Diogo Soares | Senior Product Manager">
+	<Hero />
+	
+	<!-- Projects Section -->
+	<section id="projects" class="py-20 bg-surface-alt">
+		<div class="section-container">
+			<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+				<div>
+					<h2 class="text-3xl md:text-4xl font-bold text-text mb-2">Strategic Projects</h2>
+					<p class="text-text-muted">Selected work from 10+ years in product management</p>
+				</div>
+			</div>
+			
+			<!-- Project Grid / Carousel-like horizontal scroll on mobile -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				{projects.map(project => (
+					<ProjectCard {...project} />
+				))}
+			</div>
+		</div>
+	</section>
 
-    <!-- Contact Cards - Reuse of the design style -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-lg mx-auto">
-      <a href="mailto:diogosp@gmail.com" class="card flex items-center justify-center gap-3 p-4 hover:border-accent group transition-all">
-        <span class="p-2 bg-surface-alt rounded-lg group-hover:bg-accent group-hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </span>
-        <span class="font-medium text-text">diogosp@gmail.com</span>
-      </a>
-      
-      <a href="https://linkedin.com/in/diogo-soares-pm/" target="_blank" class="card flex items-center justify-center gap-3 p-4 hover:border-accent group transition-all">
-        <span class="p-2 bg-surface-alt rounded-lg group-hover:bg-accent group-hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-        </span>
-        <span class="font-medium text-text">LinkedIn Profile</span>
-      </a>
-    </div>
+	<!-- Skills Section -->
+	<section class="py-20">
+		<div class="section-container">
+			<div class="max-w-3xl mx-auto text-center">
+				<h2 class="text-3xl font-bold text-text mb-6">Core Expertise</h2>
+				<div class="flex flex-wrap justify-center gap-3">
+					{skills.map(skill => (
+						<span class="bg-surface-dark text-text-inverted px-4 py-2 rounded-full text-sm font-medium">
+							{skill}
+						</span>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <div class="mt-12">
-       <span class="text-sm font-mono text-text-muted">Belo Horizonte, Brazil • +55 31 97234-6884</span>
-    </div>
-
-  </section>
+	<!-- CTA Section -->
+	<section class="py-20 bg-surface-dark text-text-inverted">
+		<div class="section-container text-center">
+			<h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Build Something Great</h2>
+			<p class="text-text-inverted/70 mb-8 max-w-xl mx-auto">
+				Interested in product leadership, digital transformation, or just want to chat about the intersection of technology and human behavior?
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<a href="mailto:diogosp@gmail.com" class="bg-white text-text px-6 py-3 rounded-lg font-medium hover:bg-accent hover:text-white transition-all duration-200">
+					diogosp@gmail.com
+				</a>
+				<a href="tel:+5531972346884" class="border-2 border-white/50 text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-text transition-all duration-200">
+					+55 31 97234-6884
+				</a>
+			</div>
+		</div>
+	</section>
 </Layout>
