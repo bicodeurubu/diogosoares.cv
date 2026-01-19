@@ -1,45 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import EncodedContact from '../components/EncodedContact.astro';
 ---
 
 <Layout title="Diogo Soares | Coming Soon">
   <section class="min-h-[80vh] flex flex-col justify-center items-center text-center section-container">
-    
-    <div class="mb-8">
-       <!-- Simple animated loader or just an icon -->
-       <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-       </span>
-       
-       <h1 class="text-4xl md:text-6xl font-extrabold text-text mb-4 tracking-tight">
-        Work in <span class="text-accent">Progress</span>
-       </h1>
-       
-       <p class="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed">
-        We are crafting a new digital experience to showcase strategic product leadership. 
-        <br class="hidden md:block" />The full portfolio will be live soon.
-       </p>
-    </div>
-
+// ...
     <!-- Contact Cards - Reuse of the design style -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-lg mx-auto">
-      <a href="mailto:diogosp@gmail.com" class="card flex items-center justify-center gap-3 p-4 hover:border-accent group transition-all">
+      <EncodedContact 
+        type="email" 
+        value="diogosp@gmail.com" 
+        class="card flex items-center justify-center gap-3 p-4 hover:border-accent group transition-all text-text hover:!text-text" 
+        showIcon={false}
+      >
         <span class="p-2 bg-surface-alt rounded-lg group-hover:bg-accent group-hover:text-white transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         </span>
-        <span class="font-medium text-text">diogosp@gmail.com</span>
-      </a>
+        <span class="font-medium">diogosp@gmail.com</span>
+      </EncodedContact>
       
-      <a href="https://linkedin.com/in/diogo-soares-pm/" target="_blank" class="card flex items-center justify-center gap-3 p-4 hover:border-accent group transition-all">
+      <EncodedContact 
+        type="linkedin" 
+        value="linkedin.com/in/diogo-soares-pm/" 
+        label="LinkedIn Profile"
+        class="card flex items-center justify-center gap-3 p-4 hover:border-accent group transition-all text-text hover:!text-text" 
+        showIcon={false}
+      >
         <span class="p-2 bg-surface-alt rounded-lg group-hover:bg-accent group-hover:text-white transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
         </span>
-        <span class="font-medium text-text">LinkedIn Profile</span>
-      </a>
+        <span class="font-medium">LinkedIn Profile</span>
+      </EncodedContact>
     </div>
 
     <div class="mt-12">
-       <span class="text-sm font-mono text-text-muted">Belo Horizonte, Brazil • +55 31 97234-6884</span>
+       <span class="text-sm font-mono text-text-muted flex items-center justify-center gap-2">
+         Belo Horizonte, Brazil • 
+         <EncodedContact type="phone" value="+55 31 97234-6884" class="hover:text-accent" />
+       </span>
     </div>
 
   </section>
