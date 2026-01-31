@@ -70,14 +70,43 @@ const { skills } = cvData;
       </div>
       
       {/* Grid of Cards */}
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-8">
         
-        {/* Case Study 1: Maturidade Integrativa */}
+        {/* Case Study: Hospital BP */}
+        <a href="/projects/hospital-bp" class="group card p-0 overflow-hidden flex flex-col md:col-span-2">
+          <div class="aspect-video md:aspect-[21/9] bg-surface-subtle relative overflow-hidden">
+            <img 
+              src="/images/hospital-bp-desafio.png" 
+              alt="Hospital BP Digital Transformation"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-4 left-4 bg-accent text-text-inverted text-xs font-bold uppercase px-3 py-1 rounded-full">New Case Study</span>
+          </div>
+          <div class="p-8 flex-grow flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Project Management</span>
+              <span class="text-accent">•</span>
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Digital Transformation</span>
+            </div>
+            <h3 class="text-2xl font-display text-text group-hover:text-accent transition-colors mb-3 leading-tight">
+              Transformação Digital no Hospital Beneficência Portuguesa
+            </h3>
+            <p class="text-text-secondary leading-relaxed mb-6 max-w-2xl">
+              Redesenho completo das jornadas de atendimento, integrando tecnologia, dados e uma visão centrada no paciente em um dos maiores centros médico-hospitalares da AL.
+            </p>
+            <div class="flex items-center gap-2 text-accent font-medium">
+              <span>Ler Case Completo</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+
+        {/* Case Study: Maturidade Integrativa */}
         <a href="/projects/maturidade-integrativa" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
             <img 
               src="/images/case-study-thumbnail.jpg" 
-              alt="Case Study Video"
+              alt="Maturidade Integrativa"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="absolute inset-0 bg-text/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -89,7 +118,7 @@ const { skills } = cvData;
           </div>
           <div class="p-6 flex-grow flex flex-col">
             <div class="flex flex-wrap gap-1 mb-2">
-              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Product Strategy</span>
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Strategy</span>
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Antropologia</span>
             </div>
@@ -97,7 +126,7 @@ const { skills } = cvData;
               A Maturidade Integrativa em Produtos Digitais
             </h3>
             <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
-              Como a antropologia e a gestão estratégica transformam chatbots e equipes de alta performance.
+              Como a antropologia e a gestão estratégica transformam chatbots e equipes.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
               <span data-i18n="project.viewCase">Ler Case Completo</span>
@@ -106,7 +135,7 @@ const { skills } = cvData;
           </div>
         </a>
 
-        {/* Case Study 2: AlternativaHub */}
+        {/* Case Study: AlternativaHub */}
         <a href="/projects/alternativahub" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
             <img 
@@ -126,7 +155,7 @@ const { skills } = cvData;
               AlternativaHub: Liderança e Delivery LMS
             </h3>
             <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
-              Liderança do ciclo completo de uma plataforma de educação democrática e intuitiva.
+              Liderança do ciclo completo de uma plataforma de educação democrática.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
               <span>Ler Case Completo</span>
@@ -135,7 +164,7 @@ const { skills } = cvData;
           </div>
         </a>
 
-        {/* Article 1: ChatGPT */}
+        {/* Article: ChatGPT */}
         <a href="/articles/chatgpt-senioridade" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
             <img 
@@ -155,7 +184,7 @@ const { skills } = cvData;
               ChatGPT e Senioridade
             </h3>
             <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
-              Quem faz as perguntas certas será mais valorizado no futuro com ferramentas de IA.
+              Quem faz as perguntas certas será mais valorizado no futuro com IA.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
               <span>Ler Artigo</span>
@@ -164,7 +193,7 @@ const { skills } = cvData;
           </div>
         </a>
 
-        {/* Article 2: RD Summit */}
+        {/* Article: RD Summit */}
         <a href="/articles/rd-summit-conversacional" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
             <img 
@@ -184,7 +213,7 @@ const { skills } = cvData;
               Meu primeiro RD Summit
             </h3>
             <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
-              Insights sobre o propósito da marca e o futuro das experiências conversacionais.
+              Insights sobre o propósito da marca e experiências conversacionais.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
               <span>Ler Artigo</span>
