@@ -172,6 +172,7 @@ export const ui = {
 
         // Education & Certs
         'edu.usp.degree': 'Bachelor of Social Science',
+        'edu.usp.details': 'FAPESP Scholar - Digital Anthropology Project - Study on Digital Archives',
         'cert.english': 'English Level C2 Proficient',
         'cert.ai': 'Artificial Intelligence in Digital Business',
         'cert.leadership': 'Digital Product Leadership',
@@ -342,7 +343,8 @@ export const ui = {
         'tool.Miro': 'Miro',
 
         // Education & Certs
-        'edu.usp.degree': 'Bacharel em Ciências Sociais',
+        'edu.usp.degree': 'Bacharelado em Ciências Sociais',
+        'edu.usp.details': 'Bolsista FAPESP - Projeto sobre Antropologia Digital - Estudo sobre Acervos digitais',
         'cert.english': 'Inglês Nível C2 Proficiente',
         'cert.ai': 'Inteligência Artificial em Negócios Digitais',
         'cert.leadership': 'Liderança de Produtos Digitais',
