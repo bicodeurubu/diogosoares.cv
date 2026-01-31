@@ -71,7 +71,7 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 		</script>
 		
 		<!-- i18n initialization script -->
-		<script>
+	<script>
 			import { initLang, getPreferredLang, useTranslations } from '../i18n';
 			
 			const setupI18n = () => {
@@ -95,6 +95,32 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 
 			// Also run on view transitions if enabled
 			document.addEventListener('astro:page-load', setupI18n);
+
+      // Handle "Let's Talk" click
+      document.addEventListener('DOMContentLoaded', () => {
+        const handleLetsTalk = (e: Event) => {
+          const target = e.target as HTMLElement;
+          if (target && target.closest('#lets-talk-btn')) {
+            e.preventDefault();
+            const footer = document.getElementById('contact-footer');
+            if (footer) {
+              footer.scrollIntoView({ behavior: 'smooth' });
+              
+              // Add highlight effect
+              setTimeout(() => {
+                footer.classList.add('bg-accent/10');
+                setTimeout(() => {
+                  footer.classList.remove('bg-accent/10');
+                }, 1500);
+              }, 500);
+            }
+          }
+        };
+
+        // Attach to document to handle it even after view transitions (if using them later)
+        // or re-attaching on page load
+        document.addEventListener('click', handleLetsTalk);
+      });
 		</script>
 	</head>
 	<body class="flex flex-col min-h-screen">
@@ -107,7 +133,7 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 						<a href="/cv" class="link-hover text-sm" data-i18n="nav.cv">CV</a>
 					</div>
 					<LanguageSelector />
-					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-accent text-sm py-2 px-4" showIcon={false} i18nKey="nav.letsTalk" />
+					<a href="#contact-footer" id="lets-talk-btn" class="btn-accent text-sm py-2 px-4" data-i18n="nav.letsTalk">Let's Talk</a>
 				</div>
 			</nav>
 		</header>
@@ -116,7 +142,7 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 			<slot />
 		</main>
 
-		<footer class="bg-surface-elevated border-t border-border py-16">
+		<footer id="contact-footer" class="bg-surface-elevated border-t border-border py-16 transition-all duration-1000 ease-in-out">
 			<div class="section-container">
 				<div class="flex flex-col md:flex-row justify-between items-center gap-8">
 					<div class="text-center md:text-left">
@@ -124,11 +150,7 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 						<p class="text-text-muted text-sm mt-2" data-i18n="footer.role">Senior Product Manager</p>
 					</div>
 					<div class="flex flex-col md:flex-row items-center gap-4 text-sm">
-            <EncodedContact type="email" value="diogosp@gmail.com" class="link-hover" />
-						<span class="hidden md:block text-border-strong">|</span>
-            <EncodedContact type="phone" value="+55 31 97234-6884" class="link-hover" />
-						<span class="hidden md:block text-border-strong">|</span>
-            <EncodedContact type="linkedin" value="linkedin.com/in/diogo-soares-pm/" label="LinkedIn" class="link-hover" />
+            <EncodedContact type="linkedin" value="linkedin.com/in/diogo-soares-pm/" label="LinkedIn" class="btn-primary" showIcon={true} />
 					</div>
 				</div>
 				<div class="border-t border-border mt-10 pt-8 text-center text-xs text-text-muted">
