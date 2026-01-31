@@ -12,14 +12,18 @@ import alternativaHub from '../assets/alternativahub.png';
 import chatgptPrint from '../assets/chatgpt-print2.jpg';
 import rdSummit from '../assets/rd-summit.png';
 
+import HeroBackground from '../components/HeroBackground.astro';
+
 const { skills } = cvData;
 ---
 
 
 <Layout title="Diogo Soares | Senior Product Manager">
   {/* Hero Section */}
-  <section class="min-h-[70vh] flex items-center section-container py-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
+  <section class="min-h-[70vh] flex items-center py-12 relative overflow-hidden">
+    <HeroBackground />
+    <div class="section-container w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
       
       {/* Left: Text Content */}
       <div class="order-2 md:order-1">
@@ -63,6 +67,7 @@ const { skills } = cvData;
         />
       </div>
       
+      </div>
     </div>
   </section>
 

@@ -1,0 +1,84 @@
+---
+---
+
+<div class="hero-background" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<style>
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -10;
+    background-color: transparent;
+    pointer-events: none;
+    /* Fade out the bottom to avoid sharp cutoffs when orbs go out of bounds */
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px); /* Increased blur for smoother mesh effect */
+    opacity: 0.15; /* Keep it subtle/lightweight */
+    animation: float 20s infinite ease-in-out;
+  }
+
+  .orb-1 {
+    width: 600px;
+    height: 600px;
+    background-color: theme('colors.accent.DEFAULT');
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 500px;
+    height: 500px;
+    background-color: theme('colors.accent.hover'); /* Slightly darker coral */
+    bottom: -100px;
+    left: -100px;
+    animation-delay: -5s;
+    opacity: 0.1;
+  }
+
+  .orb-3 {
+    width: 400px;
+    height: 400px;
+    background-color: theme('colors.text.DEFAULT'); /* Warm black for contrast/depth */
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    animation-delay: -10s;
+    opacity: 0.03; /* Very faint */
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  /* Reduce animation motion for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .orb {
+      animation: none;
+    }
+  }
+</style>
