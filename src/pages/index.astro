@@ -70,9 +70,9 @@ const { skills } = cvData;
       </div>
       
       {/* Grid of Cards */}
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 gap-6">
         
-        {/* Case Study Card */}
+        {/* Case Study 1: Maturidade Integrativa */}
         <a href="/projects/maturidade-integrativa" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
             <img 
@@ -87,26 +87,55 @@ const { skills } = cvData;
             </div>
             <span class="absolute top-3 left-3 bg-accent text-text-inverted text-xs font-bold uppercase px-2 py-1 rounded-full">Case Study</span>
           </div>
-          <div class="p-5 flex-grow flex flex-col">
+          <div class="p-6 flex-grow flex flex-col">
             <div class="flex flex-wrap gap-1 mb-2">
-              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Strategy</span>
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Product Strategy</span>
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Antropologia</span>
             </div>
-            <h3 class="text-lg font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
               A Maturidade Integrativa em Produtos Digitais
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-3 flex-grow line-clamp-2">
-              Como a antropologia e a gestão estratégica transformam chatbots.
+            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
+              Como a antropologia e a gestão estratégica transformam chatbots e equipes de alta performance.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
-              <span data-i18n="project.viewCase">Ler Case</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <span data-i18n="project.viewCase">Ler Case Completo</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
         </a>
 
-        {/* ChatGPT Article Card */}
+        {/* Case Study 2: AlternativaHub */}
+        <a href="/projects/alternativahub" class="group card p-0 overflow-hidden flex flex-col">
+          <div class="aspect-video bg-surface-subtle relative overflow-hidden">
+            <img 
+              src="/images/alternativahub.png" 
+              alt="AlternativaHub Project"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-accent text-text-inverted text-xs font-bold uppercase px-2 py-1 rounded-full">Case Study</span>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <div class="flex flex-wrap gap-1 mb-2">
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Product Management</span>
+              <span class="text-accent">•</span>
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">LMS</span>
+            </div>
+            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+              AlternativaHub: Liderança e Delivery LMS
+            </h3>
+            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
+              Liderança do ciclo completo de uma plataforma de educação democrática e intuitiva.
+            </p>
+            <div class="flex items-center gap-2 text-accent font-medium text-sm">
+              <span>Ler Case Completo</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+
+        {/* Article 1: ChatGPT */}
         <a href="/articles/chatgpt-senioridade" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
             <img 
@@ -116,50 +145,50 @@ const { skills } = cvData;
             />
             <span class="absolute top-3 left-3 bg-text text-text-inverted text-xs font-bold uppercase px-2 py-1 rounded-full">Artigo</span>
           </div>
-          <div class="p-5 flex-grow flex flex-col">
+          <div class="p-6 flex-grow flex flex-col">
             <div class="flex flex-wrap gap-1 mb-2">
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">AI</span>
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Senioridade</span>
             </div>
-            <h3 class="text-lg font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
               ChatGPT e Senioridade
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-3 flex-grow line-clamp-2">
-              Quem faz as perguntas certas será mais valorizado.
+            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
+              Quem faz as perguntas certas será mais valorizado no futuro com ferramentas de IA.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
               <span>Ler Artigo</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
         </a>
 
-        {/* RD Summit Article Card */}
+        {/* Article 2: RD Summit */}
         <a href="/articles/rd-summit-conversacional" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
             <img 
               src="/images/rd-summit.png" 
-              alt="RD Summit e o Futuro do Conversacional"
+              alt="RD Summit"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <span class="absolute top-3 left-3 bg-text text-text-inverted text-xs font-bold uppercase px-2 py-1 rounded-full">Artigo</span>
           </div>
-          <div class="p-5 flex-grow flex flex-col">
+          <div class="p-6 flex-grow flex flex-col">
             <div class="flex flex-wrap gap-1 mb-2">
-              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Conversacional</span>
-              <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">WhatsApp</span>
+              <span class="text-accent">•</span>
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Estratégia</span>
             </div>
-            <h3 class="text-lg font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
               Meu primeiro RD Summit
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-3 flex-grow line-clamp-2">
-              Construa um esforço legítimo no conversacional e seja recompensado.
+            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
+              Insights sobre o propósito da marca e o futuro das experiências conversacionais.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
               <span>Ler Artigo</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
         </a>
