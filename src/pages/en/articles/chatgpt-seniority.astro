@@ -1,0 +1,106 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="ChatGPT and Seniority | Diogo Soares">
+  <article class="py-16">
+    <div class="section-container">
+      
+      {/* Header */}
+      <header class="mb-12 max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <a href="/" class="text-text-muted hover:text-accent transition-colors text-sm flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            <span>Back</span>
+          </a>
+        </div>
+        
+        <div class="flex flex-wrap gap-3 mb-6">
+          <span class="badge">AI</span>
+          <span class="badge">Seniority</span>
+          <span class="badge">Product</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-display text-text mb-6 leading-tight">
+          ChatGPT and Seniority
+        </h1>
+        
+        <p class="text-xl text-text-secondary leading-relaxed">
+          Those who ask the right questions will be more valued in the near future.
+        </p>
+      </header>
+
+      {/* Content */}
+      <div class="max-w-3xl mx-auto prose-custom">
+        
+        <p class="text-text-secondary leading-relaxed mb-6">
+          The launch of ChatGPT has been causing quite a stir. It's a simple, very intuitive tool that you can spend hours playing with without getting tired (it reminded me of playing with Google Earth almost 20 years ago). Still without established business models and certainly collecting many insights from open usage, ChatGPT will be integrated into many business areas going forward. The question is how and when.
+        </p>
+
+        <p class="text-text-secondary leading-relaxed mb-6">
+          Many people even suggested it could be the first serious opponent to Google Search. I think that's an exaggeration, but who knows.
+        </p>
+
+        <p class="text-text-secondary leading-relaxed mb-6">
+          However, today I'd like to focus on another point that's been discussed a lot regarding ChatGPT's business case: <strong class="text-text">the replacement of technical professionals</strong> (mainly in technology areas) by programming AIs. GitHub already has Copilot and since its launch this topic has always been hot. What will be the future of IT where a programmer puts their intention in a few lines and the system returns code after code already built and ready to implement?
+        </p>
+
+        <div class="p-6 bg-accent/5 rounded-xl border border-accent/20 my-8">
+          <p class="text-text font-medium text-lg mb-0">
+            The simplest answer I have today is: there will be replacement, but not in the way people are seeing it.
+          </p>
+        </div>
+
+        <p class="text-text-secondary leading-relaxed mb-6">
+          So I used ChatGPT itself to explain and demonstrate how I see this. The example I thought of was creating a Satisfaction Survey for a chatbot. The intention was the same, but the questions were presented very differently. In <strong class="text-text">print 1</strong> you can see a generic question, in <strong class="text-text">print 2</strong> a more specific question, from someone who has already aligned objectives and knows methodologies. Do you understand where I'm going?
+        </p>
+
+        {/* Images */}
+        <div class="grid md:grid-cols-2 gap-6 my-10">
+          <figure class="rounded-xl overflow-hidden border border-border">
+            <img src="/images/chatgpt-print1.jpg" alt="Print 1: Generic question to ChatGPT" class="w-full" />
+            <figcaption class="p-4 bg-surface-subtle text-sm text-text-muted text-center">
+              <strong class="text-text">Print 1:</strong> Generic question - superficial responses
+            </figcaption>
+          </figure>
+          <figure class="rounded-xl overflow-hidden border border-border">
+            <img src="/images/chatgpt-print2.jpg" alt="Print 2: Specific question with NPS methodology" class="w-full" />
+            <figcaption class="p-4 bg-surface-subtle text-sm text-text-muted text-center">
+              <strong class="text-text">Print 2:</strong> Question with NPS methodology - structured responses
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="text-text-secondary leading-relaxed mb-6">
+          A junior professional can use ChatGPT to learn some things, can mirror code and see how it runs, but <strong class="text-text">won't be able to evaluate and filter the responses</strong>... mainly because they ask simple questions.
+        </p>
+
+        <p class="text-text-secondary leading-relaxed mb-6">
+          The platform's depth doesn't matter much if the user asks questions that don't transform that into real knowledge. People will continue to need business knowledge, methodologies, processes, development techniques that reduce consumption, increase performance, gain scalability, etc.
+        </p>
+
+        <p class="text-text-secondary leading-relaxed mb-6">
+          For an experienced user who is mature in their area of knowledge, the tool has <strong class="text-accent">immense power</strong> to bring intelligence, assertiveness in analysis and optimization when delivering projects. It will automate bureaucratic processes, generate very robust insights, and build much more thorough tests and validations.
+        </p>
+
+        {/* Key Takeaway */}
+        <div class="p-8 bg-surface-elevated rounded-2xl border border-border my-10">
+          <h2 class="text-xl font-display text-text mb-4">The Key Point</h2>
+          <p class="text-text-secondary leading-relaxed mb-0">
+            <strong class="text-accent">Those who ask the right questions</strong> will be more valued in the near future, with so many tools like ChatGPT being used in corporate day-to-day operations. This person will have an end-to-end view of the business, a systemic view of processes and therefore, will demand new skills and new perspectives for the profiles being hired.
+          </p>
+        </div>
+
+      </div>
+
+      {/* CTA */}
+      <div class="mt-16 text-center">
+        <a href="/#projects" class="btn-accent text-lg px-8 py-4">
+          <span>See Other Articles</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </article>
+</Layout>
