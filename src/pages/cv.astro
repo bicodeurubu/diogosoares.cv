@@ -211,6 +211,11 @@ const skillCategories = [
                 <div class="text-sm text-text-secondary mt-1">
                   <span data-i18n={edu.institution.includes('USP') ? 'edu.usp.degree' : undefined}>{edu.degree}</span>
                 </div>
+                {edu.details && (
+                  <div class="text-xs text-text-muted mt-1 italic">
+                    <span data-i18n={edu.institution.includes('USP') ? 'edu.usp.details' : undefined}>{edu.details}</span>
+                  </div>
+                )}
                 <div class="text-xs font-mono text-accent mt-1">{edu.year}</div>
               </div>
             ))}
