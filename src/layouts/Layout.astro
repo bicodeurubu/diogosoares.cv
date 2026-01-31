@@ -72,9 +72,18 @@ const t = useTranslations(lang);
 					if (key) {
 						const translated = t(key as any);
 						if (translated) {
+							// If it's a link with a specific href translation needed (rare but possible)
+							// or just update the text content
 							el.textContent = translated;
 						}
 					}
+				});
+
+				// Fix links for current language
+				const currentLang = document.documentElement.lang || 'en';
+				document.querySelectorAll('nav a[data-i18n="nav.projects"]').forEach((el) => {
+					const anchor = el as HTMLAnchorElement;
+					anchor.href = currentLang === 'en' ? '/#projects' : '/#projects';
 				});
 			};
 
@@ -91,7 +100,7 @@ const t = useTranslations(lang);
 				<a href="/" class="text-xl font-display tracking-tight text-text">Diogo<span class="text-accent">.</span></a>
 				<div class="flex items-center gap-4 md:gap-6">
 					<div class="hidden md:flex items-center gap-6">
-						<a href="#projects" class="link-hover text-sm" data-i18n="nav.projects">Projects</a>
+						<a href="/#projects" class="link-hover text-sm" data-i18n="nav.projects">Projects</a>
 						<a href="/cv" class="link-hover text-sm" data-i18n="nav.cv">CV</a>
 					</div>
 					<LanguageSelector />
