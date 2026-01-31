@@ -4,36 +4,43 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                // Contemporary sans-serif stack - clean, not newspaper-like
+                // Elegant serif for headings, clean sans for body
+                display: ['Playfair Display', 'Georgia', 'serif'],
                 sans: ['Inter', 'system-ui', 'sans-serif'],
-                display: ['Inter', 'system-ui', 'sans-serif'],
                 mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
-                // Modern, high-contrast palette - NOT pastel
+                // Light mode palette - warm, culture-focused
                 surface: {
-                    DEFAULT: '#FFFFFF',
-                    alt: '#F8FAFC', // Very subtle gray
-                    dark: '#0F172A', // Deep navy for contrast sections
+                    DEFAULT: '#FDFBF7',      // Warm white background
+                    elevated: '#FFFFFF',     // Cards, elevated elements
+                    subtle: '#F5F1EB',       // Subtle cream sections
                 },
                 text: {
-                    DEFAULT: '#0F172A',
-                    muted: '#64748B',
-                    inverted: '#FFFFFF',
+                    DEFAULT: '#2D2A26',      // Warm black for headings
+                    secondary: '#5C5650',    // Warm gray for body
+                    muted: '#8A847D',        // Muted brown for labels
+                    inverted: '#FDFBF7',     // Text on dark backgrounds
                 },
                 accent: {
-                    DEFAULT: '#2563EB', // Vibrant blue
-                    hover: '#1D4ED8',
-                    subtle: '#DBEAFE',
+                    DEFAULT: '#E07A5F',      // Coral/Terracotta - culture, warmth
+                    hover: '#C96A51',        // Darker coral for hover
+                    subtle: 'rgba(224, 122, 95, 0.12)', // Subtle coral bg
                 },
                 border: {
-                    DEFAULT: '#E2E8F0',
-                    strong: '#CBD5E1',
+                    DEFAULT: '#E8E2D9',      // Warm border
+                    strong: '#D4CCC0',       // Stronger borders
+                    accent: '#E07A5F',       // Accent borders
                 }
             },
             boxShadow: {
-                'card': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-                'card-hover': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+                'card': '0 1px 3px rgba(45, 42, 38, 0.06), 0 1px 2px rgba(45, 42, 38, 0.04)',
+                'card-hover': '0 4px 12px rgba(224, 122, 95, 0.15), 0 2px 4px rgba(45, 42, 38, 0.08)',
+                'glow': '0 0 24px rgba(224, 122, 95, 0.12)',
+            },
+            borderRadius: {
+                'xl': '16px',
+                '2xl': '24px',
             }
         },
     },

@@ -86,17 +86,16 @@ const t = useTranslations(lang);
 		</script>
 	</head>
 	<body class="flex flex-col min-h-screen">
-		<header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-border">
-			<nav class="section-container h-16 flex items-center justify-center md:justify-between">
-				<a href="/" class="text-xl font-bold tracking-tight">Diogo<span class="text-accent">.</span></a>
-				<div class="flex items-center gap-4 md:gap-8">
-					<!-- Staging Branch: Full Navigation -->
-					<div class="hidden md:flex gap-6 text-sm font-medium text-text-muted">
-						<a href="/#projects" class="hover:text-accent transition-colors" data-i18n="nav.projects">Projects</a>
-						<a href="/cv" class="hover:text-accent transition-colors">CV</a>
+		<header class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 border-b border-border">
+			<nav class="section-container h-16 flex items-center justify-between">
+				<a href="/" class="text-xl font-display tracking-tight text-text">Diogo<span class="text-accent">.</span></a>
+				<div class="flex items-center gap-4 md:gap-6">
+					<div class="hidden md:flex items-center gap-6">
+						<a href="#projects" class="link-hover text-sm" data-i18n="nav.projects">Projects</a>
+						<a href="/cv" class="link-hover text-sm" data-i18n="nav.cv">CV</a>
 					</div>
 					<LanguageSelector />
-					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-primary text-sm py-2 px-4 text-white !text-white hover:!text-white" showIcon={false} data-i18n-label="nav.letsTalk" />
+					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-accent text-sm py-2 px-4" showIcon={false} i18nKey="nav.letsTalk" />
 				</div>
 			</nav>
 		</header>
@@ -105,22 +104,22 @@ const t = useTranslations(lang);
 			<slot />
 		</main>
 
-		<footer class="bg-surface-dark text-text-inverted py-12">
+		<footer class="bg-surface-elevated border-t border-border py-16">
 			<div class="section-container">
-				<div class="flex flex-col md:flex-row justify-between items-center gap-6">
-					<div>
-						<p class="text-xl font-bold">Diogo Soares</p>
-						<p class="text-text-inverted/60 text-sm mt-1" data-i18n="footer.role">Senior Product Manager</p>
+				<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+					<div class="text-center md:text-left">
+						<p class="text-2xl font-display text-text">Diogo Soares</p>
+						<p class="text-text-muted text-sm mt-2" data-i18n="footer.role">Senior Product Manager</p>
 					</div>
 					<div class="flex flex-col md:flex-row items-center gap-4 text-sm">
-            <EncodedContact type="email" value="diogosp@gmail.com" class="hover:!text-accent transition-colors" />
-						<span class="hidden md:block text-text-inverted/30">|</span>
-            <EncodedContact type="phone" value="+55 31 97234-6884" class="hover:!text-accent transition-colors" />
-						<span class="hidden md:block text-text-inverted/30">|</span>
-            <EncodedContact type="linkedin" value="linkedin.com/in/diogo-soares-pm/" label="LinkedIn" class="hover:!text-accent transition-colors" />
+            <EncodedContact type="email" value="diogosp@gmail.com" class="link-hover" />
+						<span class="hidden md:block text-border-strong">|</span>
+            <EncodedContact type="phone" value="+55 31 97234-6884" class="link-hover" />
+						<span class="hidden md:block text-border-strong">|</span>
+            <EncodedContact type="linkedin" value="linkedin.com/in/diogo-soares-pm/" label="LinkedIn" class="link-hover" />
 					</div>
 				</div>
-				<div class="border-t border-text-inverted/10 mt-8 pt-8 text-center text-xs text-text-inverted/40">
+				<div class="border-t border-border mt-10 pt-8 text-center text-xs text-text-muted">
 					<p>© {new Date().getFullYear()} Diogo Soares. <span data-i18n="footer.builtWith">Built with purpose.</span></p>
 				</div>
 			</div>
