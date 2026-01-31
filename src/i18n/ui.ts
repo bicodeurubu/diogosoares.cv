@@ -10,7 +10,7 @@ export type Lang = keyof typeof languages;
 export const ui = {
     en: {
         // Header
-        'nav.projects': 'Projects',
+        'nav.projects': 'Projects, Cases & Articles',
         'nav.cv': 'CV',
         'nav.available': 'Available for Work',
         'nav.letsTalk': "Let's Talk",
@@ -29,7 +29,7 @@ export const ui = {
         'home.linkedinLabel': 'LinkedIn Profile',
         'home.viewCV': 'View My CV',
         'home.letsTalk': "Let's Talk",
-        'home.strategicProjects': 'Projects, Case Studies & Articles',
+        'home.strategicProjects': 'Projects, Cases & Articles',
         'home.projectsSubtitle': 'Strategic thinking applied',
         'home.coreExpertise': 'Core Expertise',
         'home.ctaTitle': "Let's Build Something Impactful",
@@ -181,7 +181,7 @@ export const ui = {
     },
     'pt-br': {
         // Header
-        'nav.projects': 'Projetos',
+        'nav.projects': 'Projetos, Cases & Artigos',
         'nav.cv': 'CV',
         'nav.available': 'Disponível para trabalho',
         'nav.letsTalk': 'Fale Comigo',
@@ -200,7 +200,7 @@ export const ui = {
         'home.linkedinLabel': 'Perfil LinkedIn',
         'home.viewCV': 'Ver meu CV',
         'home.letsTalk': 'Fale Comigo',
-        'home.strategicProjects': 'Projetos, Estudos de Caso e Artigos',
+        'home.strategicProjects': 'Projetos, Cases & Artigos',
         'home.projectsSubtitle': 'Pensamento estratégico aplicado',
         'home.coreExpertise': 'Competências Principais',
         'home.ctaTitle': 'Vamos Construir Algo Impactante',
