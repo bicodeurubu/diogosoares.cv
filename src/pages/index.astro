@@ -70,7 +70,7 @@ const { skills } = cvData;
       </div>
       
       {/* Grid of Cards */}
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-3 gap-6">
         
         {/* Case Study Card */}
         <a href="/projects/maturidade-integrativa" class="group card p-0 overflow-hidden flex flex-col">
@@ -81,32 +81,32 @@ const { skills } = cvData;
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="absolute inset-0 bg-text/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <div class="w-14 h-14 rounded-full bg-accent flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-text-inverted ml-1"><path d="M8 5v14l11-7z"/></svg>
+              <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-text-inverted ml-1"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
-            <span class="absolute top-4 left-4 bg-accent text-text-inverted text-xs font-bold uppercase px-3 py-1 rounded-full">Case Study</span>
+            <span class="absolute top-3 left-3 bg-accent text-text-inverted text-xs font-bold uppercase px-2 py-1 rounded-full">Case Study</span>
           </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Product Strategy</span>
+          <div class="p-5 flex-grow flex flex-col">
+            <div class="flex flex-wrap gap-1 mb-2">
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Strategy</span>
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Antropologia</span>
             </div>
-            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-3">
+            <h3 class="text-lg font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
               A Maturidade Integrativa em Produtos Digitais
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
-              Como a antropologia e a gestão estratégica transformam chatbots e equipes de alta performance.
+            <p class="text-text-secondary text-sm leading-relaxed mb-3 flex-grow line-clamp-2">
+              Como a antropologia e a gestão estratégica transformam chatbots.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
-              <span data-i18n="project.viewCase">Ler Case Completo</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <span data-i18n="project.viewCase">Ler Case</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
         </a>
 
-        {/* Article Card */}
+        {/* ChatGPT Article Card */}
         <a href="/articles/chatgpt-senioridade" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
             <img 
@@ -114,23 +114,52 @@ const { skills } = cvData;
               alt="ChatGPT e Senioridade"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <span class="absolute top-4 left-4 bg-text text-text-inverted text-xs font-bold uppercase px-3 py-1 rounded-full">Artigo</span>
+            <span class="absolute top-3 left-3 bg-text text-text-inverted text-xs font-bold uppercase px-2 py-1 rounded-full">Artigo</span>
           </div>
-          <div class="p-6 flex-grow flex flex-col">
-            <div class="flex flex-wrap gap-2 mb-3">
+          <div class="p-5 flex-grow flex flex-col">
+            <div class="flex flex-wrap gap-1 mb-2">
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">AI</span>
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Senioridade</span>
             </div>
-            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-3">
+            <h3 class="text-lg font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
               ChatGPT e Senioridade
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
-              Quem faz as perguntas certas será mais valorizado num futuro próximo com tantas ferramentas de IA.
+            <p class="text-text-secondary text-sm leading-relaxed mb-3 flex-grow line-clamp-2">
+              Quem faz as perguntas certas será mais valorizado.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
               <span>Ler Artigo</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+
+        {/* RD Summit Article Card */}
+        <a href="/articles/rd-summit-conversacional" class="group card p-0 overflow-hidden flex flex-col">
+          <div class="aspect-video bg-surface-subtle relative overflow-hidden">
+            <img 
+              src="/images/rd-summit.png" 
+              alt="RD Summit e o Futuro do Conversacional"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-text text-text-inverted text-xs font-bold uppercase px-2 py-1 rounded-full">Artigo</span>
+          </div>
+          <div class="p-5 flex-grow flex flex-col">
+            <div class="flex flex-wrap gap-1 mb-2">
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Conversacional</span>
+              <span class="text-accent">•</span>
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">WhatsApp</span>
+            </div>
+            <h3 class="text-lg font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+              RD Summit e o Futuro do Conversacional
+            </h3>
+            <p class="text-text-secondary text-sm leading-relaxed mb-3 flex-grow line-clamp-2">
+              Construa um esforço legítimo no conversacional e seja recompensado.
+            </p>
+            <div class="flex items-center gap-2 text-accent font-medium text-sm">
+              <span>Ler Artigo</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
         </a>
