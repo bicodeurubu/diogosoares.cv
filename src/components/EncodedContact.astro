@@ -5,9 +5,10 @@ interface Props {
   label?: string; // What to show (defaults to value)
   class?: string; // Additional classes
   showIcon?: boolean;
+  i18nKey?: string;
 }
 
-const { type, value, label, class: className = "", showIcon = true } = Astro.props;
+const { type, value, label, class: className = "", showIcon = true, i18nKey } = Astro.props;
 
 // Simple Base64 encoding for the value
 const encodedValue = Buffer.from(value).toString('base64');
@@ -34,7 +35,7 @@ const iconSvg = icons[type] || '';
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={iconSvg} />
   )}
   
-  <span class="encoded-text" data-len={displayLabel.length}>
+  <span class="encoded-text" data-len={displayLabel.length} data-i18n={i18nKey}>
     <!-- Initial render shows just dots or nothing to confuse scrapers, JS will fill it -->
     Click to reveal
   </span>
@@ -62,8 +63,14 @@ const iconSvg = icons[type] || '';
       // This defeats 99% of bots that don't execute JS.
       try {
         const decodedLabel = decode(b64Label);
-        const textSpan = link.querySelector('.encoded-text');
-        if (textSpan) textSpan.textContent = decodedLabel;
+        const textSpan = (link.querySelector('.encoded-text') as HTMLElement);
+        if (textSpan) {
+          // Only set content if NO translation key is present or if we are in default lang
+          // Actually, let i18n handle it if key exists.
+          if (!textSpan.dataset.i18n) {
+            textSpan.textContent = decodedLabel;
+          }
+        }
         
         const decodedValue = decode(b64Value);
         let href = '';

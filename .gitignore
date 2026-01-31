@@ -17,3 +17,10 @@ yarn-error.log*
 
 # macOS
 .DS_Store
+
+# Agent and IDE files
+.agent/
+.agents/
+.gemini/
+__pycache__/
+*.pyc

@@ -1,62 +1,163 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import EncodedContact from '../components/EncodedContact.astro';
+import cvData from '../data/cv.json';
+
+const { skills } = cvData;
 ---
 
-<Layout title="Diogo Soares | Coming Soon">
-  <section class="min-h-[80vh] flex flex-col justify-center items-center text-center section-container">
-    
-    <div class="mb-8">
-       <!-- Simple animated loader or just an icon -->
-       <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-       </span>
-       
-       <h1 class="text-4xl md:text-6xl font-extrabold text-text mb-4 tracking-tight">
-        <span data-i18n="home.title">Work in Progress</span>
-       </h1>
-       
-       <p class="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed">
-        <span data-i18n="home.description">We are crafting a new digital experience to showcase strategic product leadership.</span>
-        <br class="hidden md:block" />
-        <span data-i18n="home.subtitle">The full portfolio will be live soon.</span>
-       </p>
-    </div>
 
-    <!-- Contact Cards - Reuse of the design style -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-lg mx-auto">
-      <EncodedContact 
-        type="email" 
-        value="diogosp@gmail.com" 
-        class="card flex items-center justify-center gap-3 p-4 hover:border-accent group transition-all text-text hover:!text-text" 
-        showIcon={false}
-      >
-        <span class="p-2 bg-surface-alt rounded-lg group-hover:bg-accent group-hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </span>
-        <span class="font-medium">diogosp@gmail.com</span>
-      </EncodedContact>
+<Layout title="Diogo Soares | Senior Product Manager">
+  {/* Hero Section */}
+  <section class="min-h-[70vh] flex items-center section-container py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
       
-      <EncodedContact 
-        type="linkedin" 
-        value="linkedin.com/in/diogo-soares-pm/" 
-        label="LinkedIn Profile"
-        class="card flex items-center justify-center gap-3 p-4 hover:border-accent group transition-all text-text hover:!text-text" 
-        showIcon={false}
-      >
-        <span class="p-2 bg-surface-alt rounded-lg group-hover:bg-accent group-hover:text-white transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-        </span>
-        <span class="font-medium" data-i18n="home.linkedinLabel">LinkedIn Profile</span>
-      </EncodedContact>
+      {/* Left: Text Content */}
+      <div class="order-2 md:order-1">
+        <p class="text-accent font-medium text-sm tracking-wide mb-4 uppercase">
+          <span data-i18n="home.greeting">Hello, I'm</span>
+        </p>
+        
+        <h1 class="text-5xl md:text-7xl font-display text-text mb-6 leading-tight">
+          Diogo<br/>Soares
+        </h1>
+        
+        <h2 class="text-xl md:text-2xl text-text-secondary mb-6">
+          <span data-i18n="home.role">Senior Product Manager</span>
+        </h2>
+        
+        <p class="text-text-muted leading-relaxed mb-8 max-w-md">
+          <span data-i18n="home.description">Building impactful technology solutions with an anthropologist's perspective across NGO, healthcare, and tech sectors.</span>
+        </p>
+        
+        {/* CTA Buttons */}
+        <div class="flex flex-wrap gap-4">
+          <a href="/cv" class="btn-primary">
+            <span data-i18n="home.viewCV">View Resume</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-outline">
+            <span data-i18n="home.letsTalk">Let's Talk</span>
+          </a>
+        </div>
+      </div>
+      
+      {/* Right: Profile Photo */}
+      <div class="order-1 md:order-2 flex justify-center md:justify-end">
+        <img 
+          src="/images/profile-photo.jpg" 
+          alt="Diogo Soares"
+          class="w-48 h-48 md:w-72 md:h-72 rounded-full object-cover ring-2 ring-accent/30 shadow-glow"
+        />
+      </div>
+      
     </div>
+  </section>
 
-    <div class="mt-12">
-       <span class="text-sm font-mono text-text-muted flex items-center justify-center gap-2">
-         <span data-i18n="home.location">Belo Horizonte, Brazil</span> • 
-         <EncodedContact type="phone" value="+55 31 97234-6884" class="hover:text-accent" />
-       </span>
+  {/* Case Study Section */}
+  <section id="projects" class="py-16">
+    <div class="section-container">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="section-line"></span>
+            <h2 class="text-sm font-bold uppercase tracking-widest text-text-muted" data-i18n="home.strategicProjects">Case de Estudo</h2>
+          </div>
+          <p class="text-2xl md:text-3xl font-display text-text" data-i18n="home.projectsSubtitle">
+            Pensamento estratégico aplicado
+          </p>
+        </div>
+      </div>
+      
+      {/* Single Featured Case Study */}
+      <a href="/projects/maturidade-integrativa" class="group block card p-0 overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-0">
+          {/* Video Preview */}
+          <div class="aspect-video md:aspect-auto bg-surface-subtle relative overflow-hidden">
+            <img 
+              src="https://img.youtube.com/vi/Db9J4zjdcjU/maxresdefault.jpg" 
+              alt="Case Study Video"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-text/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div class="w-16 h-16 rounded-full bg-accent flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-text-inverted ml-1"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          
+          {/* Content */}
+          <div class="p-8 md:p-10 flex flex-col justify-center">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Product Strategy</span>
+              <span class="text-accent">•</span>
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Antropologia</span>
+              <span class="text-accent">•</span>
+              <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Leadership</span>
+            </div>
+            
+            <h3 class="text-2xl md:text-3xl font-display text-text group-hover:text-accent transition-colors mb-4">
+              A Maturidade Integrativa em Produtos Digitais
+            </h3>
+            
+            <p class="text-text-secondary leading-relaxed mb-6">
+              Como a antropologia e a gestão estratégica transformam chatbots e equipes de alta performance. Uma abordagem que substitui a escalada linear pela construção integrativa.
+            </p>
+            
+            <div class="flex items-center gap-2 text-accent font-medium">
+              <span data-i18n="project.viewCase">Ler Case Completo</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
+  </section>
 
+  {/* Skills Section */}
+  <section class="py-16 bg-surface-elevated">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="flex justify-center items-center gap-3 mb-6">
+          <span class="section-line"></span>
+          <h2 class="text-sm font-bold uppercase tracking-widest text-text-muted" data-i18n="home.coreExpertise">Core Expertise</h2>
+          <span class="section-line"></span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          {skills.map(skill => (
+            <span class="badge hover:border-accent hover:text-accent transition-colors" data-i18n={`skill.${skill}`}>
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* CTA Section */}
+  <section id="contact" class="py-20">
+    <div class="section-container text-center">
+      <h2 class="text-4xl md:text-6xl font-display text-text mb-8" data-i18n="home.ctaTitle">Let's Build<br/>Something Impactful</h2>
+      <p class="text-text-secondary mb-12 max-w-2xl mx-auto text-lg leading-relaxed" data-i18n="home.ctaDescription">
+        Interested in product leadership, digital transformation, or the intersection of technology and human behavior? Let's connect.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <EncodedContact 
+          type="email" 
+          value="diogosp@gmail.com" 
+          class="btn-accent text-lg px-8 py-4" 
+          showIcon={true}
+          i18nKey="home.letsTalk"
+        />
+        <EncodedContact 
+          type="linkedin" 
+          value="linkedin.com/in/diogo-soares-pm/" 
+          label="LinkedIn Profile"
+          class="btn-outline text-lg px-8 py-4" 
+          showIcon={true}
+          i18nKey="home.linkedinLabel"
+        />
+      </div>
+    </div>
   </section>
 </Layout>
