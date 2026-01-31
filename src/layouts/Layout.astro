@@ -37,6 +37,7 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
