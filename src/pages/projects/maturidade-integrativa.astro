@@ -36,11 +36,13 @@ import Layout from '../../layouts/Layout.astro';
         <div class="aspect-video rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
           <iframe 
             class="w-full h-full"
-            src="https://www.youtube.com/embed/Db9J4zjdcjU" 
+            src="https://www.youtube.com/embed/Db9J4zjdcjU?rel=0" 
             title="Maturidade Integrativa em Produtos Digitais"
             frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
+            loading="lazy"
           ></iframe>
         </div>
       </section>
