@@ -86,6 +86,10 @@ const iconSvg = icons[type] || '';
   }
 
   // Run on load and after Astro swaps (if using ViewTransitions, though not active here yet)
-  initEncodedContacts();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEncodedContacts);
+  } else {
+    initEncodedContacts();
+  }
   document.addEventListener('astro:page-load', initEncodedContacts);
 </script>

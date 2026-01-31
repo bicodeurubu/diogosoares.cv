@@ -68,7 +68,20 @@ export const ui = {
         'project.bp.desc': 'Digital transformation of one of the largest hospitals in Latin America, including Website, Intranet, and digital appointment scheduling.',
         'project.bp.metrics': '+50% user engagement',
 
+        'project.maturidade.title': 'Integrative Maturity in Digital Products',
+        'project.maturidade.desc': 'How anthropology and strategic management transform chatbots and teams.',
+
+        'project.alternativa.title': 'AlternativaHub: Leadership & LMS Delivery',
+        'project.alternativa.desc': 'Full-cycle leadership of a democratic education platform.',
+
+        'article.chatgpt.title': 'ChatGPT and Seniority',
+        'article.chatgpt.desc': 'Those who ask the right questions will be more valued in the AI future.',
+
+        'article.rdsummit.title': 'My First RD Summit',
+        'article.rdsummit.desc': 'Insights on brand purpose and conversational experiences.',
+
         'project.viewCase': 'Read Full Case Study',
+        'article.read': 'Read Article',
         'common.backHome': 'Back',
 
         // Project Tags
@@ -240,7 +253,20 @@ export const ui = {
         'project.bp.desc': 'Transformação digital de um dos maiores hospitais da América Latina, incluindo Website, Intranet e agendamento digital de consultas.',
         'project.bp.metrics': '+50% de engajamento do usuário',
 
+        'project.maturidade.title': 'A Maturidade Integrativa em Produtos Digitais',
+        'project.maturidade.desc': 'Como a antropologia e a gestão estratégica transformam chatbots e equipes.',
+
+        'project.alternativa.title': 'AlternativaHub: Liderança e Delivery LMS',
+        'project.alternativa.desc': 'Liderança do ciclo completo de uma plataforma de educação democrática.',
+
+        'article.chatgpt.title': 'ChatGPT e Senioridade',
+        'article.chatgpt.desc': 'Quem faz as perguntas certas será mais valorizado no futuro com IA.',
+
+        'article.rdsummit.title': 'Meu primeiro RD Summit',
+        'article.rdsummit.desc': 'Insights sobre o propósito da marca e experiências conversacionais.',
+
         'project.viewCase': 'Ler Case Completo',
+        'article.read': 'Ler Artigo',
         'common.backHome': 'Voltar',
 
         // Project Tags
