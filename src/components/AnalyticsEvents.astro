@@ -1,0 +1,121 @@
+---
+---
+<!-- Analytics Events Script -->
+<script is:inline>
+  // Helper to safely track events
+  const trackEvent = (eventName, params) => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params);
+      if (params.debug_mode) {
+        console.log(`[Analytics] Tracked ${eventName}:`, params);
+      }
+    } else {
+      console.warn('[Analytics] gtag not found');
+    }
+  };
+
+  // Main Event Delegation
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    
+    // 1. Link Clicks (Delegation)
+    const link = target.closest('a');
+    if (link && link.href) {
+      const href = link.href;
+      
+      // Contact: Email
+      if (href.startsWith('mailto:')) {
+        trackEvent('contact_click', {
+          method: 'email',
+          contact_info: href.replace('mailto:', '').split('?')[0],
+          page_location: window.location.pathname
+        });
+      }
+      
+      // Contact: Phone
+      else if (href.startsWith('tel:')) {
+        trackEvent('contact_click', {
+          method: 'phone',
+          contact_info: href.replace('tel:', ''),
+          page_location: window.location.pathname
+        });
+      }
+      
+      // Social Links
+      else if (href.includes('linkedin.com')) {
+        trackEvent('social_click', {
+          network: 'linkedin',
+          url: href,
+          page_location: window.location.pathname
+        });
+      }
+      else if (href.includes('github.com')) {
+        trackEvent('social_click', {
+          network: 'github',
+          url: href,
+          page_location: window.location.pathname
+        });
+      }
+      
+      // Projects Navigation
+      else if (href.includes('/projects/') && !href.includes('#')) {
+         trackEvent('view_project', {
+           project_path: new URL(href).pathname,
+           page_location: window.location.pathname
+         });
+      }
+      
+      // CV View/Download (if link)
+      else if (href.endsWith('/cv') || href.endsWith('cv.pdf')) {
+        trackEvent('view_cv', {
+          type: 'link_click',
+          page_location: window.location.pathname
+        });
+      }
+    }
+
+    // 2. Button Clicks
+    const button = target.closest('button');
+    if (button) {
+      // Print/Download CV Button
+      if (button.id === 'btn-print-cv' || button.innerText.includes('Download') || (button.getAttribute('onclick') || '').includes('print')) {
+        trackEvent('cv_download', {
+          method: 'print_button',
+          page_location: window.location.pathname
+        });
+      }
+      
+      // Language Change
+      if (button.classList.contains('lang-option')) {
+        const lang = button.dataset.lang;
+        trackEvent('language_switch', {
+          language: lang,
+          page_location: window.location.pathname
+        });
+      }
+    }
+  });
+
+  // 3. Scroll Depth Tracking (Simple 50% / 90% Vertical Scroll)
+  let trackedScroll50 = false;
+  let trackedScroll90 = false;
+
+  window.addEventListener('scroll', () => {
+    const userScroll = window.scrollY + window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const scrollPercent = (userScroll / docHeight) * 100;
+
+    if (scrollPercent > 50 && !trackedScroll50) {
+      trackEvent('scroll_depth', { depth: '50%', page_location: window.location.pathname });
+      trackedScroll50 = true;
+    }
+    if (scrollPercent > 90 && !trackedScroll90) {
+      trackEvent('scroll_depth', { depth: '90%', page_location: window.location.pathname });
+      trackedScroll90 = true;
+    }
+  });
+
+  // Track page view on initial load logic handles automatically by basic snippet, 
+  // but if using ViewTransitions, we might need to hook into astro:page-load.
+  // Assuming basic MP initially.
+</script>

@@ -3,6 +3,7 @@ import '../styles/global.css';
 import EncodedContact from '../components/EncodedContact.astro';
 import LanguageSelector from '../components/LanguageSelector.astro';
 import { defaultLang, useTranslations, type Lang } from '../i18n';
+import AnalyticsEvents from '../components/AnalyticsEvents.astro';
 
 interface Props {
 	title: string;
@@ -129,5 +130,6 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 				</div>
 			</div>
 		</footer>
+    <AnalyticsEvents />
 	</body>
 </html>
