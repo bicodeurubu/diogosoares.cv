@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import cvData from '../data/cv.json';
+import profilePhoto from '../assets/profile-photo.jpg';
 
 const { profile, skills, toolkit, history, education, certifications } = cvData;
+
 
 // Normalize company names for i18n keys
 const getJobKey = (company: string) => {
@@ -50,7 +52,7 @@ const skillCategories = [
           {/* Profile Photo */}
           <div class="flex-shrink-0">
             <img 
-              src="/images/profile-photo.jpg" 
+              src={profilePhoto.src} 
               alt={profile.name}
               class="profile-photo print:w-24 print:h-24"
             />
