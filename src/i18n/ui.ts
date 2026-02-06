@@ -65,10 +65,23 @@ export const ui = {
         'project.hubify.metrics': 'SaaS Product 0 to 1',
 
         'project.bp.title': 'Digital Transformation (Hospital BP)',
-        'project.bp.desc': 'Digital transformation of one of the largest hospitals in Latin America, including Website, Intranet, and digital appointment scheduling.',
+        'project.bp.desc': 'Led the digital transformation of one of LatAm’s largest hospitals, achieving +50% user engagement through new digital appointment systems.',
         'project.bp.metrics': '+50% user engagement',
 
+        'project.maturidade.title': 'Integrative Maturity in Digital Products',
+        'project.maturidade.desc': 'Strategic framework implementation that elevated team maturity and delivery consistency across the organization.',
+
+        'project.alternativa.title': 'AlternativaHub: Leadership & LMS Delivery',
+        'project.alternativa.desc': 'Full-cycle product leadership of a democratic education platform, driving user adoption and platform stability.',
+
+        'article.chatgpt.title': 'ChatGPT and Seniority',
+        'article.chatgpt.desc': 'Strategic analysis of how AI redefines seniority: shifting value from answers to asking the right questions.',
+
+        'article.rdsummit.title': 'My First RD Summit',
+        'article.rdsummit.desc': 'Connecting brand purpose with conversational experiences: key insights from Latin America’s largest marketing event.',
+
         'project.viewCase': 'Read Full Case Study',
+        'article.read': 'Read Article',
         'common.backHome': 'Back',
 
         // Project Tags
@@ -157,6 +170,11 @@ export const ui = {
         'skill.Stakeholder Management': 'Stakeholder Management',
         'skill.KPIs & OKRs': 'KPIs & OKRs',
         'skill.Strategic Planning': 'Strategic Planning',
+        'skill.Team Leadership': 'Team Leadership',
+        'skill.Digital Transformation': 'Digital Transformation',
+        'skill.Data-Driven Decision Making': 'Data-Driven Decision Making',
+        'skill.Process Optimization': 'Process Optimization',
+        'skill.Business Intelligence': 'Business Intelligence',
 
         // Tools
         'tool.Jira': 'Jira',
@@ -237,10 +255,23 @@ export const ui = {
         'project.hubify.metrics': 'Produto SaaS 0 a 1',
 
         'project.bp.title': 'Transformação Digital (Hospital BP)',
-        'project.bp.desc': 'Transformação digital de um dos maiores hospitais da América Latina, incluindo Website, Intranet e agendamento digital de consultas.',
+        'project.bp.desc': 'Liderei a transformação digital de um dos maiores hospitais da AL, atingindo +50% de engajamento através do novo agendamento digital.',
         'project.bp.metrics': '+50% de engajamento do usuário',
 
+        'project.maturidade.title': 'A Maturidade Integrativa em Produtos Digitais',
+        'project.maturidade.desc': 'Implementação de framework estratégico que elevou a maturidade do time e a consistência das entregas na organização.',
+
+        'project.alternativa.title': 'AlternativaHub: Liderança e Delivery LMS',
+        'project.alternativa.desc': 'Liderança de ciclo completo de plataforma de educação democrática, impulsionando adoção de usuários e estabilidade da plataforma.',
+
+        'article.chatgpt.title': 'ChatGPT e Senioridade',
+        'article.chatgpt.desc': 'Análise estratégica de como a IA redefine a senioridade: deslocando o valor das respostas para a capacidade de fazer as perguntas certas.',
+
+        'article.rdsummit.title': 'Meu primeiro RD Summit',
+        'article.rdsummit.desc': 'Conectando propósito de marca a experiências conversacionais: principais insights do maior evento de marketing da AL.',
+
         'project.viewCase': 'Ler Case Completo',
+        'article.read': 'Ler Artigo',
         'common.backHome': 'Voltar',
 
         // Project Tags
@@ -329,6 +360,11 @@ export const ui = {
         'skill.Stakeholder Management': 'Gestão de Stakeholders',
         'skill.KPIs & OKRs': 'KPIs & OKRs',
         'skill.Strategic Planning': 'Planejamento Estratégico',
+        'skill.Team Leadership': 'Liderança de Equipe',
+        'skill.Digital Transformation': 'Transformação Digital',
+        'skill.Data-Driven Decision Making': 'Tomada de Decisão Baseada em Dados',
+        'skill.Process Optimization': 'Otimização de Processos',
+        'skill.Business Intelligence': 'Business Intelligence',
 
         // Tools
         'tool.Jira': 'Jira',

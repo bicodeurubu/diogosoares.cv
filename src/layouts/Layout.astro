@@ -3,6 +3,7 @@ import '../styles/global.css';
 import EncodedContact from '../components/EncodedContact.astro';
 import LanguageSelector from '../components/LanguageSelector.astro';
 import { defaultLang, useTranslations, type Lang } from '../i18n';
+import AnalyticsEvents from '../components/AnalyticsEvents.astro';
 
 interface Props {
 	title: string;
@@ -36,6 +37,12 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GJPVRQBNL2"></script>
@@ -64,7 +71,7 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 		</script>
 		
 		<!-- i18n initialization script -->
-		<script>
+	<script>
 			import { initLang, getPreferredLang, useTranslations } from '../i18n';
 			
 			const setupI18n = () => {
@@ -88,6 +95,32 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 
 			// Also run on view transitions if enabled
 			document.addEventListener('astro:page-load', setupI18n);
+
+      // Handle "Let's Talk" click
+      document.addEventListener('DOMContentLoaded', () => {
+        const handleLetsTalk = (e: Event) => {
+          const target = e.target as HTMLElement;
+          if (target && target.closest('#lets-talk-btn')) {
+            e.preventDefault();
+            const footer = document.getElementById('contact-footer');
+            if (footer) {
+              footer.scrollIntoView({ behavior: 'smooth' });
+              
+              // Add highlight effect
+              setTimeout(() => {
+                footer.classList.add('bg-accent/10');
+                setTimeout(() => {
+                  footer.classList.remove('bg-accent/10');
+                }, 1500);
+              }, 500);
+            }
+          }
+        };
+
+        // Attach to document to handle it even after view transitions (if using them later)
+        // or re-attaching on page load
+        document.addEventListener('click', handleLetsTalk);
+      });
 		</script>
 	</head>
 	<body class="flex flex-col min-h-screen">
@@ -100,7 +133,7 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 						<a href="/cv" class="link-hover text-sm" data-i18n="nav.cv">CV</a>
 					</div>
 					<LanguageSelector />
-					<EncodedContact type="email" value="diogosp@gmail.com" label="Let's Talk" class="btn-accent text-sm py-2 px-4" showIcon={false} i18nKey="nav.letsTalk" />
+					<a href="#contact-footer" id="lets-talk-btn" class="btn-accent text-sm py-2 px-4" data-i18n="nav.letsTalk">Let's Talk</a>
 				</div>
 			</nav>
 		</header>
@@ -109,25 +142,13 @@ const projectsHref = isHome ? "#projects" : (currentPath.startsWith('/en') ? "/e
 			<slot />
 		</main>
 
-		<footer class="bg-surface-elevated border-t border-border py-16">
+		<footer id="contact-footer" class="bg-surface-elevated py-16 transition-all duration-1000 ease-in-out">
 			<div class="section-container">
-				<div class="flex flex-col md:flex-row justify-between items-center gap-8">
-					<div class="text-center md:text-left">
-						<p class="text-2xl font-display text-text">Diogo Soares</p>
-						<p class="text-text-muted text-sm mt-2" data-i18n="footer.role">Senior Product Manager</p>
-					</div>
-					<div class="flex flex-col md:flex-row items-center gap-4 text-sm">
-            <EncodedContact type="email" value="diogosp@gmail.com" class="link-hover" />
-						<span class="hidden md:block text-border-strong">|</span>
-            <EncodedContact type="phone" value="+55 31 97234-6884" class="link-hover" />
-						<span class="hidden md:block text-border-strong">|</span>
-            <EncodedContact type="linkedin" value="linkedin.com/in/diogo-soares-pm/" label="LinkedIn" class="link-hover" />
-					</div>
-				</div>
-				<div class="border-t border-border mt-10 pt-8 text-center text-xs text-text-muted">
+				<div class="text-center text-xs text-text-muted">
 					<p>© {new Date().getFullYear()} Diogo Soares. <span data-i18n="footer.builtWith">Built with purpose.</span></p>
 				</div>
 			</div>
 		</footer>
+    <AnalyticsEvents />
 	</body>
 </html>

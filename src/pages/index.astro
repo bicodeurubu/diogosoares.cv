@@ -2,6 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import EncodedContact from '../components/EncodedContact.astro';
 import cvData from '../data/cv.json';
+import { Image } from 'astro:assets';
+
+// Images
+import profilePhoto from '../assets/profile-photo.jpg';
+import hospitalBpDesafio from '../assets/hospital-bp-desafio.png';
+import maturidadeIntegrativa from '../assets/case-study-thumbnail.jpg';
+import alternativaHub from '../assets/alternativahub.png';
+import chatgptPrint from '../assets/chatgpt-print2.jpg';
+import rdSummit from '../assets/rd-summit.png';
+
+import HeroBackground from '../components/HeroBackground.astro';
 
 const { skills } = cvData;
 ---
@@ -9,24 +20,26 @@ const { skills } = cvData;
 
 <Layout title="Diogo Soares | Senior Product Manager">
   {/* Hero Section */}
-  <section class="min-h-[70vh] flex items-center section-container py-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
+  <section class="min-h-[60vh] flex items-center py-8 relative overflow-hidden">
+    <HeroBackground />
+    <div class="section-container w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
       
       {/* Left: Text Content */}
       <div class="order-2 md:order-1">
-        <p class="text-accent font-medium text-sm tracking-wide mb-4 uppercase">
+        <p class="text-accent font-medium text-sm tracking-wide mb-3 uppercase">
           <span data-i18n="home.greeting">Hello, I'm</span>
         </p>
         
-        <h1 class="text-5xl md:text-7xl font-display text-text mb-6 leading-tight">
+        <h1 class="text-5xl md:text-7xl font-display text-text mb-4 leading-tight">
           Diogo<br/>Soares
         </h1>
         
-        <h2 class="text-xl md:text-2xl text-text-secondary mb-6">
+        <h2 class="text-xl md:text-2xl text-text-secondary mb-4">
           <span data-i18n="home.role">Senior Product Manager</span>
         </h2>
         
-        <p class="text-text-muted leading-relaxed mb-8 max-w-md">
+        <p class="text-text-muted leading-relaxed mb-6 max-w-md">
           <span data-i18n="home.description">Building impactful technology solutions with an anthropologist's perspective across NGO, healthcare, and tech sectors.</span>
         </p>
         
@@ -44,18 +57,42 @@ const { skills } = cvData;
       
       {/* Right: Profile Photo */}
       <div class="order-1 md:order-2 flex justify-center md:justify-end">
-        <img 
-          src="/images/profile-photo.jpg" 
+        <Image 
+          src={profilePhoto} 
           alt="Diogo Soares"
+          width={288}
+          height={288}
+          loading="eager"
           class="w-48 h-48 md:w-72 md:h-72 rounded-full object-cover ring-2 ring-accent/30 shadow-glow"
         />
       </div>
       
+      </div>
+    </div>
+  </section>
+
+  {/* Skills Section */}
+  <section class="py-6 bg-surface-elevated">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="flex justify-center items-center gap-3 mb-4">
+          <span class="section-line"></span>
+          <h2 class="text-sm font-bold uppercase tracking-widest text-text-muted" data-i18n="home.coreExpertise">Core Expertise</h2>
+          <span class="section-line"></span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2">
+          {skills.map(skill => (
+            <span class="badge hover:border-accent hover:text-accent transition-colors" data-i18n={`skill.${skill}`}>
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 
   {/* Projects, Case Studies & Articles Section */}
-  <section id="projects" class="py-16">
+  <section id="projects" class="py-8">
     <div class="section-container">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
         <div>
@@ -75,9 +112,10 @@ const { skills } = cvData;
         {/* Case Study: Hospital BP */}
         <a href="/projects/hospital-bp" class="group card p-0 overflow-hidden flex flex-col md:col-span-2">
           <div class="aspect-video md:aspect-[21/9] bg-surface-subtle relative overflow-hidden">
-            <img 
-              src="/images/hospital-bp-desafio.png" 
+            <Image 
+              src={hospitalBpDesafio} 
               alt="Hospital BP Digital Transformation"
+              width={800}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="absolute top-4 left-4 flex gap-2">
@@ -94,14 +132,14 @@ const { skills } = cvData;
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Digital Transformation</span>
             </div>
-            <h3 class="text-2xl font-display text-text group-hover:text-accent transition-colors mb-3 leading-tight">
+            <h3 class="text-2xl font-display text-text group-hover:text-accent transition-colors mb-3 leading-tight" data-i18n="project.bp.title">
               Transformação Digital no Hospital Beneficência Portuguesa
             </h3>
-            <p class="text-text-secondary leading-relaxed mb-6 max-w-2xl">
+            <p class="text-text-secondary leading-relaxed mb-6 max-w-2xl" data-i18n="project.bp.desc">
               Redesenho completo das jornadas de atendimento, integrando tecnologia, dados e uma visão centrada no paciente em um dos maiores centros médico-hospitalares da AL.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium">
-              <span>Ler Case Completo</span>
+              <span data-i18n="project.viewCase">Ler Case Completo</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
@@ -110,9 +148,10 @@ const { skills } = cvData;
         {/* Case Study: Maturidade Integrativa */}
         <a href="/projects/maturidade-integrativa" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
-            <img 
-              src="/images/case-study-thumbnail.jpg" 
+            <Image 
+              src={maturidadeIntegrativa} 
               alt="Maturidade Integrativa"
+              width={600}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div class="absolute inset-0 bg-text/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -131,10 +170,10 @@ const { skills } = cvData;
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Antropologia</span>
             </div>
-            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight" data-i18n="project.maturidade.title">
               A Maturidade Integrativa em Produtos Digitais
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
+            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow" data-i18n="project.maturidade.desc">
               Como a antropologia e a gestão estratégica transformam chatbots e equipes.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
@@ -147,9 +186,10 @@ const { skills } = cvData;
         {/* Case Study: AlternativaHub */}
         <a href="/projects/alternativahub" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
-            <img 
-              src="/images/alternativahub.png" 
+            <Image 
+              src={alternativaHub}
               alt="AlternativaHub Project"
+              width={600}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <span class="absolute top-3 left-3 flex items-center gap-1.5 bg-accent text-text-inverted text-xs font-bold uppercase px-3 py-1.5 rounded-full shadow-md">
@@ -163,14 +203,14 @@ const { skills } = cvData;
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">LMS</span>
             </div>
-            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight" data-i18n="project.alternativa.title">
               AlternativaHub: Liderança e Delivery LMS
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
+            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow" data-i18n="project.alternativa.desc">
               Liderança do ciclo completo de uma plataforma de educação democrática.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
-              <span>Ler Case Completo</span>
+              <span data-i18n="project.viewCase">Ler Case Completo</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
@@ -179,9 +219,10 @@ const { skills } = cvData;
         {/* Article: ChatGPT */}
         <a href="/articles/chatgpt-senioridade" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
-            <img 
-              src="/images/chatgpt-print2.jpg" 
+            <Image 
+              src={chatgptPrint} 
               alt="ChatGPT e Senioridade"
+              width={600}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <span class="absolute top-3 left-3 flex items-center gap-1.5 bg-text-secondary text-text-inverted text-xs font-bold uppercase px-3 py-1.5 rounded-full shadow-md">
@@ -195,14 +236,14 @@ const { skills } = cvData;
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Senioridade</span>
             </div>
-            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight" data-i18n="article.chatgpt.title">
               ChatGPT e Senioridade
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
+            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow" data-i18n="article.chatgpt.desc">
               Quem faz as perguntas certas será mais valorizado no futuro com IA.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
-              <span>Ler Artigo</span>
+              <span data-i18n="article.read">Ler Artigo</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
@@ -211,9 +252,10 @@ const { skills } = cvData;
         {/* Article: RD Summit */}
         <a href="/articles/rd-summit-conversacional" class="group card p-0 overflow-hidden flex flex-col">
           <div class="aspect-video bg-surface-subtle relative overflow-hidden">
-            <img 
-              src="/images/rd-summit.png" 
+            <Image 
+              src={rdSummit} 
               alt="RD Summit"
+              width={600}
               class="w-full h-full object-cover object-[center_15%] group-hover:scale-105 transition-transform duration-500"
             />
             <span class="absolute top-3 left-3 flex items-center gap-1.5 bg-text-secondary text-text-inverted text-xs font-bold uppercase px-3 py-1.5 rounded-full shadow-md">
@@ -227,14 +269,14 @@ const { skills } = cvData;
               <span class="text-accent">•</span>
               <span class="text-xs font-medium text-text-muted uppercase tracking-wider">Estratégia</span>
             </div>
-            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight">
+            <h3 class="text-xl font-display text-text group-hover:text-accent transition-colors mb-2 leading-tight" data-i18n="article.rdsummit.title">
               Meu primeiro RD Summit
             </h3>
-            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow">
+            <p class="text-text-secondary text-sm leading-relaxed mb-4 flex-grow" data-i18n="article.rdsummit.desc">
               Insights sobre o propósito da marca e experiências conversacionais.
             </p>
             <div class="flex items-center gap-2 text-accent font-medium text-sm">
-              <span>Ler Artigo</span>
+              <span data-i18n="article.read">Ler Artigo</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
@@ -244,25 +286,7 @@ const { skills } = cvData;
     </div>
   </section>
 
-  {/* Skills Section */}
-  <section class="py-16 bg-surface-elevated">
-    <div class="section-container">
-      <div class="max-w-3xl mx-auto text-center">
-        <div class="flex justify-center items-center gap-3 mb-6">
-          <span class="section-line"></span>
-          <h2 class="text-sm font-bold uppercase tracking-widest text-text-muted" data-i18n="home.coreExpertise">Core Expertise</h2>
-          <span class="section-line"></span>
-        </div>
-        <div class="flex flex-wrap justify-center gap-3">
-          {skills.map(skill => (
-            <span class="badge hover:border-accent hover:text-accent transition-colors" data-i18n={`skill.${skill}`}>
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   {/* CTA Section */}
   <section id="contact" class="py-20">
@@ -272,13 +296,7 @@ const { skills } = cvData;
         Interested in product leadership, digital transformation, or the intersection of technology and human behavior? Let's connect.
       </p>
       <div class="flex flex-wrap justify-center gap-6">
-        <EncodedContact 
-          type="email" 
-          value="diogosp@gmail.com" 
-          class="btn-accent text-lg px-8 py-4" 
-          showIcon={true}
-          i18nKey="home.letsTalk"
-        />
+
         <EncodedContact 
           type="linkedin" 
           value="linkedin.com/in/diogo-soares-pm/" 
